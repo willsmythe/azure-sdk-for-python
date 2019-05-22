@@ -331,7 +331,7 @@
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -345,8 +345,8 @@ parameters.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>domain_info</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.Domain" title="azure.mgmt.eventgrid.models.Domain"><em>Domain</em></a>) – Domain information</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>domain_info</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.Domain" title="azure.mgmt.eventgrid.models.Domain"><em>Domain</em></a>) – Domain information.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -379,7 +379,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -411,7 +411,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference external" href="https
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -442,8 +442,18 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -471,8 +481,18 @@ overrides</span>.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -502,7 +522,7 @@ overrides</span>.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -525,7 +545,7 @@ ClientRawResponse</p>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.DomainsOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.DomainsOperations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.DomainsOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -538,8 +558,8 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>key_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Key name to regenerate key1 or key2</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>key_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Key name to regenerate key1 or key2.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -570,8 +590,8 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the domains resource</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the domains resource.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -611,7 +631,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -625,8 +645,8 @@ parameters.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -659,8 +679,8 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -692,8 +712,8 @@ AzureOperationPoller[ClientRawResponse[<a class="reference external" href="https
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain</p></li>
-<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain.</p></li>
+<li><p><strong>domain_topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -725,8 +745,18 @@ ClientRawResponse</p>
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
 <li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Domain name.</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -748,7 +778,7 @@ overrides</span>.</p></li>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.DomainTopicsOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.DomainTopicsOperations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.DomainTopicsOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -768,7 +798,7 @@ overrides</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -795,7 +825,7 @@ for an EventGrid topic.</p></li>
 subscription names must be between 3 and 64 characters in length and
 should use alphanumeric letters only.</p></li>
 <li><p><strong>event_subscription_info</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.EventSubscription" title="azure.mgmt.eventgrid.models.EventSubscription"><em>EventSubscription</em></a>) – Event subscription properties
-containing the destination and filter information</p></li>
+containing the destination and filter information.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -836,7 +866,7 @@ for a resource group, and
 for a resource, and
 ‘/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics/{topicName}’
 for an EventGrid topic.</p></li>
-<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription</p></li>
+<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -876,7 +906,7 @@ for a resource group, and
 for a resource, and
 ‘/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics/{topicName}’
 for an EventGrid topic.</p></li>
-<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription</p></li>
+<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -915,7 +945,7 @@ for a resource group, and
 for a resource, and
 ‘/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics/{topicName}’
 for an EventGrid topic.</p></li>
-<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription</p></li>
+<li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -938,7 +968,7 @@ ClientRawResponse</p>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_domain_topic">
-<code class="descname">list_by_domain_topic</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>domain_name</em>, <em>topic_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_by_domain_topic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_domain_topic" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_by_domain_topic</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>domain_name</em>, <em>topic_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_by_domain_topic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_domain_topic" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all event subscriptions for a specific domain topic.</p>
 <p>List all event subscriptions that have been created for a specific
 domain topic.</p>
@@ -947,12 +977,20 @@ domain topic.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the top level domain</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the top level domain.</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the domain topic.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -974,7 +1012,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_resource">
-<code class="descname">list_by_resource</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>provider_namespace</em>, <em>resource_type_name</em>, <em>resource_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_by_resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_resource" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_by_resource</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>provider_namespace</em>, <em>resource_type_name</em>, <em>resource_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_by_resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_by_resource" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all event subscriptions for a specific topic.</p>
 <p>List all event subscriptions that have been created for a specific
 topic.</p>
@@ -983,13 +1021,21 @@ topic.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>provider_namespace</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Namespace of the provider of the topic</p></li>
-<li><p><strong>resource_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource type</p></li>
-<li><p><strong>resource_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>provider_namespace</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Namespace of the provider of the topic.</p></li>
+<li><p><strong>resource_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource type.</p></li>
+<li><p><strong>resource_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1011,7 +1057,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group">
-<code class="descname">list_global_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_global_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all global event subscriptions under an Azure subscription and
 resource group.</p>
 <p>List all global event subscriptions under a specific Azure subscription
@@ -1021,10 +1067,18 @@ and resource group.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1046,7 +1100,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group_for_topic_type">
-<code class="descname">list_global_by_resource_group_for_topic_type</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_resource_group_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group_for_topic_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_global_by_resource_group_for_topic_type</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_resource_group_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_resource_group_for_topic_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all global event subscriptions under a resource group for a topic
 type.</p>
 <p>List all global event subscriptions under a resource group for a
@@ -1056,11 +1110,19 @@ specific topic type.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1082,7 +1144,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription">
-<code class="descname">list_global_by_subscription</code><span class="sig-paren">(</span><em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_subscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_global_by_subscription</code><span class="sig-paren">(</span><em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_subscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an aggregated list of all global event subscriptions under an Azure
 subscription.</p>
 <p>List all aggregated global event subscriptions under a specific Azure
@@ -1090,10 +1152,18 @@ subscription.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1115,18 +1185,26 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription_for_topic_type">
-<code class="descname">list_global_by_subscription_for_topic_type</code><span class="sig-paren">(</span><em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_subscription_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription_for_topic_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_global_by_subscription_for_topic_type</code><span class="sig-paren">(</span><em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_global_by_subscription_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_global_by_subscription_for_topic_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all global event subscriptions for a topic type.</p>
 <p>List all global event subscriptions under an Azure subscription for a
 topic type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1148,7 +1226,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group">
-<code class="descname">list_regional_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>location</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_regional_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>location</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all regional event subscriptions under an Azure subscription and
 resource group.</p>
 <p>List all event subscriptions from the given location under a specific
@@ -1158,11 +1236,19 @@ Azure subscription and resource group.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1184,7 +1270,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group_for_topic_type">
-<code class="descname">list_regional_by_resource_group_for_topic_type</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>location</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_resource_group_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group_for_topic_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_regional_by_resource_group_for_topic_type</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>location</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_resource_group_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_resource_group_for_topic_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all regional event subscriptions under an Azure subscription and
 resource group for a topic type.</p>
 <p>List all event subscriptions from the given location under a specific
@@ -1194,12 +1280,20 @@ Azure subscription and resource group and topic type.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location</p></li>
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location.</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1221,18 +1315,26 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription">
-<code class="descname">list_regional_by_subscription</code><span class="sig-paren">(</span><em>location</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_subscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_regional_by_subscription</code><span class="sig-paren">(</span><em>location</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_subscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all regional event subscriptions under an Azure subscription.</p>
 <p>List all event subscriptions from the given location under a specific
 Azure subscription.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1254,7 +1356,7 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription_for_topic_type">
-<code class="descname">list_regional_by_subscription_for_topic_type</code><span class="sig-paren">(</span><em>location</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>label=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_subscription_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription_for_topic_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_regional_by_subscription_for_topic_type</code><span class="sig-paren">(</span><em>location</em>, <em>topic_type_name</em>, <em>filter=None</em>, <em>top=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/operations/event_subscriptions_operations.html#EventSubscriptionsOperations.list_regional_by_subscription_for_topic_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.list_regional_by_subscription_for_topic_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all regional event subscriptions under an Azure subscription for a
 topic type.</p>
 <p>List all event subscriptions from the given location under a specific
@@ -1262,12 +1364,20 @@ Azure subscription and topic type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location</p></li>
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
-<li><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The label used to filter the results for event
-subscriptions list.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the location.</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1289,7 +1399,7 @@ overrides</span>.</p></li>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.EventSubscriptionsOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1311,9 +1421,9 @@ for a resource, and
 ‘/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics/{topicName}’
 for an EventGrid topic.</p></li>
 <li><p><strong>event_subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the event subscription to be
-updated</p></li>
+updated.</p></li>
 <li><p><strong>event_subscription_update_parameters</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.EventSubscriptionUpdateParameters" title="azure.mgmt.eventgrid.models.EventSubscriptionUpdateParameters"><em>EventSubscriptionUpdateParameters</em></a>) – Updated event
-subscription information</p></li>
+subscription information.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -1353,7 +1463,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -1386,7 +1496,7 @@ overrides</span>.</p></li>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.Operations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.Operations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.Operations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1406,7 +1516,7 @@ overrides</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -1419,8 +1529,8 @@ overrides</span>.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
-<li><p><strong>topic_info</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.Topic" title="azure.mgmt.eventgrid.models.Topic"><em>Topic</em></a>) – Topic information</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
+<li><p><strong>topic_info</strong> (<a class="reference internal" href="azure.mgmt.eventgrid.models.html#azure.mgmt.eventgrid.models.Topic" title="azure.mgmt.eventgrid.models.Topic"><em>Topic</em></a>) – Topic information.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -1453,7 +1563,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
 direct response alongside the deserialized response</p></li>
@@ -1485,7 +1595,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference external" href="https
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1516,8 +1626,18 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1545,8 +1665,18 @@ overrides</span>.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Filter the results using OData syntax.</p></li>
-<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return.</p></li>
+<li><p><strong>filter</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The query used to filter the search results using OData
+syntax. Filtering is permitted on the ‘name’ property only and with
+limited number of OData operations. These operations are: the
+‘contains’ function as well as the following logical operations: not,
+and, or, eq (for equal), and ne (for not equal). No arithmetic
+operations are supported. The following is a valid filter example:
+$filter=contains(namE, ‘PATTERN’) and name ne ‘PATTERN-1’. The
+following is not a valid filter example: $filter=location eq ‘westus’.</p></li>
+<li><p><strong>top</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of results to return per page for the list
+operation. Valid range for top parameter is 1 to 100. If not
+specified, the default number of results to be returned is 20 items
+per page.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1576,9 +1706,9 @@ overrides</span>.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>provider_namespace</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Namespace of the provider of the topic</p></li>
-<li><p><strong>resource_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
-<li><p><strong>resource_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>provider_namespace</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Namespace of the provider of the topic.</p></li>
+<li><p><strong>resource_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
+<li><p><strong>resource_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1608,7 +1738,7 @@ overrides</span>.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1631,7 +1761,7 @@ ClientRawResponse</p>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.TopicsOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.TopicsOperations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.TopicsOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1644,7 +1774,7 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>key_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Key name to regenerate key1 or key2</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
@@ -1676,7 +1806,7 @@ ClientRawResponse</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The name of the resource group within the
 user’s subscription.</p></li>
-<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic</p></li>
+<li><p><strong>topic_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic.</p></li>
 <li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
@@ -1717,7 +1847,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-02-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Version of the API to be used with the client request. Constant value: “2019-06-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -1728,7 +1858,7 @@ AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1784,7 +1914,7 @@ overrides</span>.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type</p></li>
+<li><p><strong>topic_type_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic type.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -1806,7 +1936,7 @@ overrides</span>.</p></li>
 
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.operations.TopicTypesOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.TopicTypesOperations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.eventgrid.models' from 'd:\\a\\1\\s\\sdk\\eventgrid\\azure-mgmt-eventgrid\\azure\\mgmt\\eventgrid\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.eventgrid.operations.TopicTypesOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -323,15 +323,15 @@
 
 <span class="sd">    All required parameters must be populated in order to send to Azure.</span>
 
-<span class="sd">    :ivar id: Fully qualified identifier of the resource</span>
+<span class="sd">    :ivar id: Fully qualified identifier of the resource.</span>
 <span class="sd">    :vartype id: str</span>
-<span class="sd">    :ivar name: Name of the resource</span>
+<span class="sd">    :ivar name: Name of the resource.</span>
 <span class="sd">    :vartype name: str</span>
-<span class="sd">    :ivar type: Type of the resource</span>
+<span class="sd">    :ivar type: Type of the resource.</span>
 <span class="sd">    :vartype type: str</span>
-<span class="sd">    :param location: Required. Location of the resource</span>
+<span class="sd">    :param location: Required. Location of the resource.</span>
 <span class="sd">    :type location: str</span>
-<span class="sd">    :param tags: Tags of the resource</span>
+<span class="sd">    :param tags: Tags of the resource.</span>
 <span class="sd">    :type tags: dict[str, str]</span>
 <span class="sd">    :ivar provisioning_state: Provisioning state of the domain. Possible</span>
 <span class="sd">     values include: &#39;Creating&#39;, &#39;Updating&#39;, &#39;Deleting&#39;, &#39;Succeeded&#39;,</span>
@@ -340,15 +340,6 @@
 <span class="sd">     ~azure.mgmt.eventgrid.models.DomainProvisioningState</span>
 <span class="sd">    :ivar endpoint: Endpoint for the domain.</span>
 <span class="sd">    :vartype endpoint: str</span>
-<span class="sd">    :param input_schema: This determines the format that Event Grid should</span>
-<span class="sd">     expect for incoming events published to the domain. Possible values</span>
-<span class="sd">     include: &#39;EventGridSchema&#39;, &#39;CustomEventSchema&#39;, &#39;CloudEventV01Schema&#39;.</span>
-<span class="sd">     Default value: &quot;EventGridSchema&quot; .</span>
-<span class="sd">    :type input_schema: str or ~azure.mgmt.eventgrid.models.InputSchema</span>
-<span class="sd">    :param input_schema_mapping: Information about the InputSchemaMapping</span>
-<span class="sd">     which specified the info about mapping event payload.</span>
-<span class="sd">    :type input_schema_mapping:</span>
-<span class="sd">     ~azure.mgmt.eventgrid.models.InputSchemaMapping</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
@@ -368,16 +359,12 @@
         <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{str}</span><span class="s1">&#39;</span><span class="p">},</span>
         <span class="s1">&#39;provisioning_state&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.provisioningState&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
         <span class="s1">&#39;endpoint&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.endpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;input_schema&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.inputSchema&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;input_schema_mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.inputSchemaMapping&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;InputSchemaMapping&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">input_schema</span><span class="o">=</span><span class="s2">&quot;EventGridSchema&quot;</span><span class="p">,</span> <span class="n">input_schema_mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Domain</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">provisioning_state</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">input_schema</span> <span class="o">=</span> <span class="n">input_schema</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">input_schema_mapping</span> <span class="o">=</span> <span class="n">input_schema_mapping</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="kc">None</span></div>
 </pre></div>
 
            </div>

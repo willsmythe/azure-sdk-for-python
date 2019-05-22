@@ -321,11 +321,11 @@
 <span class="sd">    Variables are only populated by the server, and will be ignored when</span>
 <span class="sd">    sending a request.</span>
 
-<span class="sd">    :ivar id: Fully qualified identifier of the resource</span>
+<span class="sd">    :ivar id: Fully qualified identifier of the resource.</span>
 <span class="sd">    :vartype id: str</span>
-<span class="sd">    :ivar name: Name of the resource</span>
+<span class="sd">    :ivar name: Name of the resource.</span>
 <span class="sd">    :vartype name: str</span>
-<span class="sd">    :ivar type: Type of the resource</span>
+<span class="sd">    :ivar type: Type of the resource.</span>
 <span class="sd">    :vartype type: str</span>
 <span class="sd">    :ivar topic: Name of the topic of the event subscription.</span>
 <span class="sd">    :vartype topic: str</span>
@@ -344,11 +344,6 @@
 <span class="sd">    :type labels: list[str]</span>
 <span class="sd">    :param expiration_time_utc: Expiration time of the event subscription.</span>
 <span class="sd">    :type expiration_time_utc: datetime</span>
-<span class="sd">    :param event_delivery_schema: The event delivery schema for the event</span>
-<span class="sd">     subscription. Possible values include: &#39;EventGridSchema&#39;,</span>
-<span class="sd">     &#39;CloudEventV01Schema&#39;, &#39;CustomInputSchema&#39;</span>
-<span class="sd">    :type event_delivery_schema: str or</span>
-<span class="sd">     ~azure.mgmt.eventgrid.models.EventDeliverySchema</span>
 <span class="sd">    :param retry_policy: The retry policy for events. This can be used to</span>
 <span class="sd">     configure maximum number of delivery attempts and time to live for events.</span>
 <span class="sd">    :type retry_policy: ~azure.mgmt.eventgrid.models.RetryPolicy</span>
@@ -376,12 +371,11 @@
         <span class="s1">&#39;filter&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.filter&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;EventSubscriptionFilter&#39;</span><span class="p">},</span>
         <span class="s1">&#39;labels&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.labels&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;[str]&#39;</span><span class="p">},</span>
         <span class="s1">&#39;expiration_time_utc&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.expirationTimeUtc&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;iso-8601&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;event_delivery_schema&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.eventDeliverySchema&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
         <span class="s1">&#39;retry_policy&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.retryPolicy&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;RetryPolicy&#39;</span><span class="p">},</span>
         <span class="s1">&#39;dead_letter_destination&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.deadLetterDestination&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;DeadLetterDestination&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiration_time_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">event_delivery_schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dead_letter_destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiration_time_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dead_letter_destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">EventSubscription</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">provisioning_state</span> <span class="o">=</span> <span class="kc">None</span>
@@ -389,7 +383,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="nb">filter</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time_utc</span> <span class="o">=</span> <span class="n">expiration_time_utc</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">event_delivery_schema</span> <span class="o">=</span> <span class="n">event_delivery_schema</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">retry_policy</span> <span class="o">=</span> <span class="n">retry_policy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dead_letter_destination</span> <span class="o">=</span> <span class="n">dead_letter_destination</span></div>
 </pre></div>

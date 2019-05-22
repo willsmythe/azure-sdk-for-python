@@ -317,24 +317,6 @@
   <div class="section" id="module-azure.mgmt.eventgrid.models">
 <span id="azure-mgmt-eventgrid-models-module"></span><h1>azure.mgmt.eventgrid.models module<a class="headerlink" href="#module-azure.mgmt.eventgrid.models" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="azure.mgmt.eventgrid.models.InputSchemaMapping">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">InputSchemaMapping</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/input_schema_mapping_py3.html#InputSchemaMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.InputSchemaMapping" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
-<p>By default, Event Grid expects events to be in the Event Grid event schema.
-Specifying an input schema mapping enables publishing to Event Grid using a
-custom input schema. Currently, the only supported type of
-InputSchemaMapping is ‘JsonInputSchemaMapping’.</p>
-<p>You probably want to use the sub-classes and not this class directly. Known
-sub-classes are: JsonInputSchemaMapping</p>
-<p>All required parameters must be populated in order to send to Azure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_schema_mapping_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Constant filled by server.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
 <dt id="azure.mgmt.eventgrid.models.Resource">
 <em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">Resource</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/resource_py3.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.Resource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
@@ -344,79 +326,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
-<dt id="azure.mgmt.eventgrid.models.JsonField">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">JsonField</code><span class="sig-paren">(</span><em>*</em>, <em>source_field: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/json_field_py3.html#JsonField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.JsonField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
-<p>This is used to express the source of an input schema mapping for a single
-target field in the Event Grid Event schema. This is currently used in the
-mappings for the ‘id’, ‘topic’ and ‘eventtime’ properties. This represents
-a field in the input event schema.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>source_field</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of a field in the input event schema that’s to
-be used as the source of a mapping.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
-<dt id="azure.mgmt.eventgrid.models.JsonFieldWithDefault">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">JsonFieldWithDefault</code><span class="sig-paren">(</span><em>*</em>, <em>source_field: str = None</em>, <em>default_value: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/json_field_with_default_py3.html#JsonFieldWithDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.JsonFieldWithDefault" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
-<p>This is used to express the source of an input schema mapping for a single
-target field
-in the Event Grid Event schema. This is currently used in the mappings for
-the ‘subject’,
-‘eventtype’ and ‘dataversion’ properties. This represents a field in the
-input event schema
-along with a default value to be used, and at least one of these two
-properties should be provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>source_field</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of a field in the input event schema that’s to
-be used as the source of a mapping.</p></li>
-<li><p><strong>default_value</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The default value to be used for mapping when a
-SourceField is not provided or if there’s no property with the specified
-name in the published JSON event payload.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
-<dt id="azure.mgmt.eventgrid.models.JsonInputSchemaMapping">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">JsonInputSchemaMapping</code><span class="sig-paren">(</span><em>*</em>, <em>id=None</em>, <em>topic=None</em>, <em>event_time=None</em>, <em>event_type=None</em>, <em>subject=None</em>, <em>data_version=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/json_input_schema_mapping_py3.html#JsonInputSchemaMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.JsonInputSchemaMapping" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.eventgrid.models.input_schema_mapping_py3.InputSchemaMapping</span></code></p>
-<p>This enables publishing to Event Grid using a custom input schema. This can
-be used to map properties from a custom input JSON schema to the Event Grid
-event schema.</p>
-<p>All required parameters must be populated in order to send to Azure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>input_schema_mapping_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Constant filled by server.</p></li>
-<li><p><strong>id</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonField" title="azure.mgmt.eventgrid.models.JsonField"><em>JsonField</em></a>) – The mapping information for the Id property of the Event Grid
-Event.</p></li>
-<li><p><strong>topic</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonField" title="azure.mgmt.eventgrid.models.JsonField"><em>JsonField</em></a>) – The mapping information for the Topic property of the Event
-Grid Event.</p></li>
-<li><p><strong>event_time</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonField" title="azure.mgmt.eventgrid.models.JsonField"><em>JsonField</em></a>) – The mapping information for the EventTime property of
-the Event Grid Event.</p></li>
-<li><p><strong>event_type</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonFieldWithDefault" title="azure.mgmt.eventgrid.models.JsonFieldWithDefault"><em>JsonFieldWithDefault</em></a>) – The mapping information for the EventType property of
-the Event Grid Event.</p></li>
-<li><p><strong>subject</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonFieldWithDefault" title="azure.mgmt.eventgrid.models.JsonFieldWithDefault"><em>JsonFieldWithDefault</em></a>) – The mapping information for the Subject property of the
-Event Grid Event.</p></li>
-<li><p><strong>data_version</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.JsonFieldWithDefault" title="azure.mgmt.eventgrid.models.JsonFieldWithDefault"><em>JsonFieldWithDefault</em></a>) – The mapping information for the DataVersion property
-of the Event Grid Event.</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 </ul>
 </dd>
 </dl>
@@ -433,15 +345,15 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource.</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource.</p></li>
 </ul>
 </dd>
 </dl>
@@ -449,7 +361,7 @@ sending a request.</p>
 
 <dl class="class">
 <dt id="azure.mgmt.eventgrid.models.Domain">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">Domain</code><span class="sig-paren">(</span><em>*</em>, <em>location: str</em>, <em>tags=None</em>, <em>input_schema='EventGridSchema'</em>, <em>input_schema_mapping=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/domain_py3.html#Domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.Domain" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">Domain</code><span class="sig-paren">(</span><em>*</em>, <em>location: str</em>, <em>tags=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/domain_py3.html#Domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.Domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.eventgrid.models.tracked_resource_py3.TrackedResource</span></code></p>
 <p>EventGrid Domain.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -458,9 +370,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 <li><p><strong>provisioning_state</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.eventgrid.models.DomainProvisioningState" title="azure.mgmt.eventgrid.models.DomainProvisioningState"><em>DomainProvisioningState</em></a>) – Provisioning state of the domain. Possible
 values include: ‘Creating’, ‘Updating’, ‘Deleting’, ‘Succeeded’,
@@ -470,14 +382,8 @@ values include: ‘Creating’, ‘Updating’, ‘Deleting’, ‘Succeeded’,
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource</p></li>
-<li><p><strong>input_schema</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference internal" href="#azure.mgmt.eventgrid.models.InputSchema" title="azure.mgmt.eventgrid.models.InputSchema"><em>InputSchema</em></a>) – This determines the format that Event Grid should
-expect for incoming events published to the domain. Possible values
-include: ‘EventGridSchema’, ‘CustomEventSchema’, ‘CloudEventV01Schema’.
-Default value: “EventGridSchema” .</p></li>
-<li><p><strong>input_schema_mapping</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.InputSchemaMapping" title="azure.mgmt.eventgrid.models.InputSchemaMapping"><em>InputSchemaMapping</em></a>) – Information about the InputSchemaMapping
-which specified the info about mapping event payload.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource.</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource.</p></li>
 </ul>
 </dd>
 </dl>
@@ -490,7 +396,7 @@ which specified the info about mapping event payload.</p></li>
 <p>Properties of the Domain update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the domains resource</p>
+<dd class="field-odd"><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the domains resource.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -518,7 +424,7 @@ which specified the info about mapping event payload.</p></li>
 <p>All required parameters must be populated in order to send to Azure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>key_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Key name to regenerate key1 or key2</p>
+<dd class="field-odd"><p><strong>key_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Key name to regenerate key1 or key2.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -533,9 +439,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters</dt>
@@ -991,7 +897,7 @@ the Service Bus destination of an event subscription.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.eventgrid.models.EventSubscription">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">EventSubscription</code><span class="sig-paren">(</span><em>*</em>, <em>destination=None</em>, <em>filter=None</em>, <em>labels=None</em>, <em>expiration_time_utc=None</em>, <em>event_delivery_schema=None</em>, <em>retry_policy=None</em>, <em>dead_letter_destination=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_subscription_py3.html#EventSubscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventSubscription" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">EventSubscription</code><span class="sig-paren">(</span><em>*</em>, <em>destination=None</em>, <em>filter=None</em>, <em>labels=None</em>, <em>expiration_time_utc=None</em>, <em>retry_policy=None</em>, <em>dead_letter_destination=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_subscription_py3.html#EventSubscription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventSubscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.eventgrid.models.resource_py3.Resource</span></code></p>
 <p>Event Subscription.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -999,9 +905,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 <li><p><strong>topic</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the topic of the event subscription.</p></li>
 <li><p><strong>provisioning_state</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.eventgrid.models.EventSubscriptionProvisioningState" title="azure.mgmt.eventgrid.models.EventSubscriptionProvisioningState"><em>EventSubscriptionProvisioningState</em></a>) – Provisioning state of the event subscription.
@@ -1016,10 +922,6 @@ be delivered for the event subscription.</p></li>
 <li><p><strong>filter</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.EventSubscriptionFilter" title="azure.mgmt.eventgrid.models.EventSubscriptionFilter"><em>EventSubscriptionFilter</em></a>) – Information about the filter for the event subscription.</p></li>
 <li><p><strong>labels</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – List of user defined labels.</p></li>
 <li><p><strong>expiration_time_utc</strong> (<em>datetime</em>) – Expiration time of the event subscription.</p></li>
-<li><p><strong>event_delivery_schema</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
-</em><a class="reference internal" href="#azure.mgmt.eventgrid.models.EventDeliverySchema" title="azure.mgmt.eventgrid.models.EventDeliverySchema"><em>EventDeliverySchema</em></a>) – The event delivery schema for the event
-subscription. Possible values include: ‘EventGridSchema’,
-‘CloudEventV01Schema’, ‘CustomInputSchema’</p></li>
 <li><p><strong>retry_policy</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.RetryPolicy" title="azure.mgmt.eventgrid.models.RetryPolicy"><em>RetryPolicy</em></a>) – The retry policy for events. This can be used to
 configure maximum number of delivery attempts and time to live for events.</p></li>
 <li><p><strong>dead_letter_destination</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.DeadLetterDestination" title="azure.mgmt.eventgrid.models.DeadLetterDestination"><em>DeadLetterDestination</em></a>) – The DeadLetter destination of the event
@@ -1031,7 +933,7 @@ subscription.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.eventgrid.models.EventSubscriptionUpdateParameters">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">EventSubscriptionUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>destination=None</em>, <em>filter=None</em>, <em>labels=None</em>, <em>expiration_time_utc=None</em>, <em>event_delivery_schema=None</em>, <em>retry_policy=None</em>, <em>dead_letter_destination=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_subscription_update_parameters_py3.html#EventSubscriptionUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventSubscriptionUpdateParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">EventSubscriptionUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>destination=None</em>, <em>filter=None</em>, <em>labels=None</em>, <em>expiration_time_utc=None</em>, <em>retry_policy=None</em>, <em>dead_letter_destination=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_subscription_update_parameters_py3.html#EventSubscriptionUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventSubscriptionUpdateParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>Properties of the Event Subscription update.</p>
 <dl class="field-list simple">
@@ -1043,10 +945,6 @@ be delivered for the event subscription.</p></li>
 <li><p><strong>labels</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – List of user defined labels.</p></li>
 <li><p><strong>expiration_time_utc</strong> (<em>datetime</em>) – Information about the expiration time for the
 event subscription.</p></li>
-<li><p><strong>event_delivery_schema</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
-</em><a class="reference internal" href="#azure.mgmt.eventgrid.models.EventDeliverySchema" title="azure.mgmt.eventgrid.models.EventDeliverySchema"><em>EventDeliverySchema</em></a>) – The event delivery schema for the event
-subscription. Possible values include: ‘EventGridSchema’,
-‘CloudEventV01Schema’, ‘CustomInputSchema’</p></li>
 <li><p><strong>retry_policy</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.RetryPolicy" title="azure.mgmt.eventgrid.models.RetryPolicy"><em>RetryPolicy</em></a>) – The retry policy for events. This can be used to
 configure maximum number of delivery attempts and time to live for events.</p></li>
 <li><p><strong>dead_letter_destination</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.DeadLetterDestination" title="azure.mgmt.eventgrid.models.DeadLetterDestination"><em>DeadLetterDestination</em></a>) – The DeadLetter destination of the event
@@ -1105,7 +1003,7 @@ destination of an event subscription.</p>
 
 <dl class="class">
 <dt id="azure.mgmt.eventgrid.models.Topic">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">Topic</code><span class="sig-paren">(</span><em>*</em>, <em>location: str</em>, <em>tags=None</em>, <em>input_schema='EventGridSchema'</em>, <em>input_schema_mapping=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/topic_py3.html#Topic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.Topic" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">Topic</code><span class="sig-paren">(</span><em>*</em>, <em>location: str</em>, <em>tags=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/topic_py3.html#Topic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.Topic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.eventgrid.models.tracked_resource_py3.TrackedResource</span></code></p>
 <p>EventGrid Topic.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -1114,9 +1012,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 <li><p><strong>provisioning_state</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.eventgrid.models.TopicProvisioningState" title="azure.mgmt.eventgrid.models.TopicProvisioningState"><em>TopicProvisioningState</em></a>) – Provisioning state of the topic. Possible values
 include: ‘Creating’, ‘Updating’, ‘Deleting’, ‘Succeeded’, ‘Canceled’,
@@ -1126,16 +1024,8 @@ include: ‘Creating’, ‘Updating’, ‘Deleting’, ‘Succeeded’, ‘Can
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource</p></li>
-<li><p><strong>input_schema</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference internal" href="#azure.mgmt.eventgrid.models.InputSchema" title="azure.mgmt.eventgrid.models.InputSchema"><em>InputSchema</em></a>) – This determines the format that Event Grid should
-expect for incoming events published to the topic. Possible values
-include: ‘EventGridSchema’, ‘CustomEventSchema’, ‘CloudEventV01Schema’.
-Default value: “EventGridSchema” .</p></li>
-<li><p><strong>input_schema_mapping</strong> (<a class="reference internal" href="#azure.mgmt.eventgrid.models.InputSchemaMapping" title="azure.mgmt.eventgrid.models.InputSchemaMapping"><em>InputSchemaMapping</em></a>) – This enables publishing using custom event
-schemas. An InputSchemaMapping can be specified to map various properties
-of a source schema to various required properties of the EventGridEvent
-schema.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. Location of the resource.</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags of the resource.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1191,9 +1081,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters</dt>
@@ -1217,9 +1107,9 @@ sending a request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource</p></li>
-<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource</p></li>
-<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource</p></li>
+<li><p><a class="reference internal" href="azure.keyvault.html#azure.keyvault.KeyVaultId.id" title="azure.keyvault.KeyVaultId.id"><strong>id</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Fully qualified identifier of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.alertsmanagement.models.html#azure.mgmt.alertsmanagement.models.AlertsSortByFields.name" title="azure.mgmt.alertsmanagement.models.AlertsSortByFields.name"><strong>name</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><a class="reference internal" href="azure.batch.models.html#azure.batch.models.ContainerConfiguration.type" title="azure.batch.models.ContainerConfiguration.type"><strong>type</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Type of the resource.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters</dt>
@@ -1328,28 +1218,6 @@ type.</p></li>
 </dd></dl>
 
 <dl class="class">
-<dt id="azure.mgmt.eventgrid.models.InputSchema">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">InputSchema</code><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_grid_management_client_enums.html#InputSchema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.InputSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.5/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
-<p>An enumeration.</p>
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.InputSchema.cloud_event_v01_schema">
-<code class="descname">cloud_event_v01_schema</code><em class="property"> = 'CloudEventV01Schema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.InputSchema.cloud_event_v01_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.InputSchema.custom_event_schema">
-<code class="descname">custom_event_schema</code><em class="property"> = 'CustomEventSchema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.InputSchema.custom_event_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.InputSchema.event_grid_schema">
-<code class="descname">event_grid_schema</code><em class="property"> = 'EventGridSchema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.InputSchema.event_grid_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="azure.mgmt.eventgrid.models.DomainTopicProvisioningState">
 <em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">DomainTopicProvisioningState</code><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_grid_management_client_enums.html#DomainTopicProvisioningState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.DomainTopicProvisioningState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.5/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
@@ -1424,28 +1292,6 @@ type.</p></li>
 <dl class="attribute">
 <dt id="azure.mgmt.eventgrid.models.EventSubscriptionProvisioningState.updating">
 <code class="descname">updating</code><em class="property"> = 'Updating'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventSubscriptionProvisioningState.updating" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="azure.mgmt.eventgrid.models.EventDeliverySchema">
-<em class="property">class </em><code class="descclassname">azure.mgmt.eventgrid.models.</code><code class="descname">EventDeliverySchema</code><a class="reference internal" href="../_modules/azure/mgmt/eventgrid/models/event_grid_management_client_enums.html#EventDeliverySchema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventDeliverySchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.5/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
-<p>An enumeration.</p>
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.EventDeliverySchema.cloud_event_v01_schema">
-<code class="descname">cloud_event_v01_schema</code><em class="property"> = 'CloudEventV01Schema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventDeliverySchema.cloud_event_v01_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.EventDeliverySchema.custom_input_schema">
-<code class="descname">custom_input_schema</code><em class="property"> = 'CustomInputSchema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventDeliverySchema.custom_input_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="azure.mgmt.eventgrid.models.EventDeliverySchema.event_grid_schema">
-<code class="descname">event_grid_schema</code><em class="property"> = 'EventGridSchema'</em><a class="headerlink" href="#azure.mgmt.eventgrid.models.EventDeliverySchema.event_grid_schema" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
