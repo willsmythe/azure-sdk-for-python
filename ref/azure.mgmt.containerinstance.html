@@ -351,6 +351,65 @@ for every service call.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="method">
+<dt id="azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_cached_images">
+<code class="descname">list_cached_images</code><span class="sig-paren">(</span><em>location</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/container_instance_management_client.html#ContainerInstanceManagementClient.list_cached_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_cached_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of cached images.</p>
+<p>Get the list of cached images on specific OS type for a subscription in
+a region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The identifier for the physical azure location.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CachedImagesListResult or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.containerinstance.models.html#azure.mgmt.containerinstance.models.CachedImagesListResult" title="azure.mgmt.containerinstance.models.CachedImagesListResult">CachedImagesListResult</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CloudError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_capabilities">
+<code class="descname">list_capabilities</code><span class="sig-paren">(</span><em>location</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/container_instance_management_client.html#ContainerInstanceManagementClient.list_capabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of capabilities of the location.</p>
+<p>Get the list of CPU/memory/GPU capabilities of a region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The identifier for the physical azure location.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CapabilitiesListResult or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.containerinstance.models.html#azure.mgmt.containerinstance.models.CapabilitiesListResult" title="azure.mgmt.containerinstance.models.CapabilitiesListResult">CapabilitiesListResult</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CloudError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

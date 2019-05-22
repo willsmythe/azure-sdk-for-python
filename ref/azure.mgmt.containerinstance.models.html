@@ -907,7 +907,7 @@ group.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.containerinstance.models.Operation">
-<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">Operation</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>display</em>, <em>origin=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/operation_py3.html#Operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.Operation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">Operation</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>display</em>, <em>properties=None</em>, <em>origin=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/operation_py3.html#Operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.Operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>An operation for Azure Container Instance service.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -916,6 +916,7 @@ group.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The name of the operation.</p></li>
 <li><p><strong>display</strong> (<a class="reference internal" href="#azure.mgmt.containerinstance.models.OperationDisplay" title="azure.mgmt.containerinstance.models.OperationDisplay"><em>OperationDisplay</em></a>) – Required. The display information of the operation.</p></li>
+<li><p><strong>properties</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#object" title="(in Python v3.5)"><em>object</em></a>) – The additional properties.</p></li>
 <li><p><strong>origin</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.containerinstance.models.ContainerInstanceOperationsOrigin" title="azure.mgmt.containerinstance.models.ContainerInstanceOperationsOrigin"><em>ContainerInstanceOperationsOrigin</em></a>) – The intended executor of the operation. Possible values
 include: ‘User’, ‘System’</p></li>
@@ -1066,6 +1067,92 @@ sending a request.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The resource location.</p></li>
 <li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – The resource tags.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.containerinstance.models.CachedImages">
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">CachedImages</code><span class="sig-paren">(</span><em>*</em>, <em>os_type: str</em>, <em>image: str</em>, <em>id: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/cached_images_py3.html#CachedImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.CachedImages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The cached image and OS type.</p>
+<p>All required parameters must be populated in order to send to Azure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The resource Id of the cached image.</p></li>
+<li><p><strong>os_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The OS type of the cached image.</p></li>
+<li><p><strong>image</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The cached image name.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.containerinstance.models.CachedImagesListResult">
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">CachedImagesListResult</code><span class="sig-paren">(</span><em>*</em>, <em>value=None</em>, <em>next_link: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/cached_images_list_result_py3.html#CachedImagesListResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.CachedImagesListResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The response containing cached images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference internal" href="#azure.mgmt.containerinstance.models.CachedImages" title="azure.mgmt.containerinstance.models.CachedImages"><em>CachedImages</em></a><em>]</em>) – The list of cached images.</p></li>
+<li><p><strong>next_link</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The URI to fetch the next page of cached images.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.containerinstance.models.CapabilitiesCapabilities">
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">CapabilitiesCapabilities</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/capabilities_capabilities_py3.html#CapabilitiesCapabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.CapabilitiesCapabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The supported capabilities.</p>
+<p>Variables are only populated by the server, and will be ignored when
+sending a request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_memory_in_gb</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) – The maximum allowed memory request in GB.</p></li>
+<li><p><strong>max_cpu</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) – The maximum allowed CPU request in cores.</p></li>
+<li><p><strong>max_gpu_count</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) – The maximum allowed GPU count.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.containerinstance.models.Capabilities">
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">Capabilities</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/capabilities_py3.html#Capabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.Capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The regional capabilities.</p>
+<p>Variables are only populated by the server, and will be ignored when
+sending a request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The resource type that this capability describes.</p></li>
+<li><p><strong>os_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The OS type that this capability describes.</p></li>
+<li><p><a class="reference internal" href="azure.mgmt.cognitiveservices.models.html#azure.mgmt.cognitiveservices.models.ResourceSkuRestrictionsType.location" title="azure.mgmt.cognitiveservices.models.ResourceSkuRestrictionsType.location"><strong>location</strong></a> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The resource location.</p></li>
+<li><p><strong>ip_address_type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The ip address type that this capability describes.</p></li>
+<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The GPU sku that this capability describes.</p></li>
+<li><p><strong>capabilities</strong> (<a class="reference internal" href="#azure.mgmt.containerinstance.models.CapabilitiesCapabilities" title="azure.mgmt.containerinstance.models.CapabilitiesCapabilities"><em>CapabilitiesCapabilities</em></a>) – The supported capabilities.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.containerinstance.models.CapabilitiesListResult">
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerinstance.models.</code><code class="descname">CapabilitiesListResult</code><span class="sig-paren">(</span><em>*</em>, <em>value=None</em>, <em>next_link: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerinstance/models/capabilities_list_result_py3.html#CapabilitiesListResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerinstance.models.CapabilitiesListResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The response containing list of capabilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference internal" href="#azure.mgmt.containerinstance.models.Capabilities" title="azure.mgmt.containerinstance.models.Capabilities"><em>Capabilities</em></a><em>]</em>) – The list of capabilities.</p></li>
+<li><p><strong>next_link</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The URI to fetch the next page of capabilities.</p></li>
 </ul>
 </dd>
 </dl>

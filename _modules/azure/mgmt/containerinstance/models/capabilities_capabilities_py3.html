@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>azure.mgmt.containerinstance.models.operation_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
+  <title>azure.mgmt.containerinstance.models.capabilities_capabilities_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
   
 
   
@@ -285,7 +285,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>azure.mgmt.containerinstance.models.operation_py3</li>
+      <li>azure.mgmt.containerinstance.models.capabilities_capabilities_py3</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -300,7 +300,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for azure.mgmt.containerinstance.models.operation_py3</h1><div class="highlight"><pre>
+  <h1>Source code for azure.mgmt.containerinstance.models.capabilities_capabilities_py3</h1><div class="highlight"><pre>
 <span></span><span class="c1"># coding=utf-8</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 <span class="c1"># Copyright (c) Microsoft Corporation. All rights reserved.</span>
@@ -315,41 +315,37 @@
 <span class="kn">from</span> <span class="nn">msrest.serialization</span> <span class="k">import</span> <span class="n">Model</span>
 
 
-<div class="viewcode-block" id="Operation"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.containerinstance.models.html#azure.mgmt.containerinstance.models.Operation">[docs]</a><span class="k">class</span> <span class="nc">Operation</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;An operation for Azure Container Instance service.</span>
+<div class="viewcode-block" id="CapabilitiesCapabilities"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.containerinstance.models.html#azure.mgmt.containerinstance.models.CapabilitiesCapabilities">[docs]</a><span class="k">class</span> <span class="nc">CapabilitiesCapabilities</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The supported capabilities.</span>
 
-<span class="sd">    All required parameters must be populated in order to send to Azure.</span>
+<span class="sd">    Variables are only populated by the server, and will be ignored when</span>
+<span class="sd">    sending a request.</span>
 
-<span class="sd">    :param name: Required. The name of the operation.</span>
-<span class="sd">    :type name: str</span>
-<span class="sd">    :param display: Required. The display information of the operation.</span>
-<span class="sd">    :type display: ~azure.mgmt.containerinstance.models.OperationDisplay</span>
-<span class="sd">    :param properties: The additional properties.</span>
-<span class="sd">    :type properties: object</span>
-<span class="sd">    :param origin: The intended executor of the operation. Possible values</span>
-<span class="sd">     include: &#39;User&#39;, &#39;System&#39;</span>
-<span class="sd">    :type origin: str or</span>
-<span class="sd">     ~azure.mgmt.containerinstance.models.ContainerInstanceOperationsOrigin</span>
+<span class="sd">    :ivar max_memory_in_gb: The maximum allowed memory request in GB.</span>
+<span class="sd">    :vartype max_memory_in_gb: float</span>
+<span class="sd">    :ivar max_cpu: The maximum allowed CPU request in cores.</span>
+<span class="sd">    :vartype max_cpu: float</span>
+<span class="sd">    :ivar max_gpu_count: The maximum allowed GPU count.</span>
+<span class="sd">    :vartype max_gpu_count: float</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;max_memory_in_gb&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;max_cpu&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;max_gpu_count&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
     <span class="p">}</span>
 
     <span class="n">_attribute_map</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;display&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;OperationDisplay&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;properties&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;max_memory_in_gb&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;maxMemoryInGB&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;max_cpu&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;maxCpu&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;max_gpu_count&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;maxGpuCount&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Operation</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="n">display</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">properties</span> <span class="o">=</span> <span class="n">properties</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">origin</span></div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CapabilitiesCapabilities</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_memory_in_gb</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_cpu</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_gpu_count</span> <span class="o">=</span> <span class="kc">None</span></div>
 </pre></div>
 
            </div>

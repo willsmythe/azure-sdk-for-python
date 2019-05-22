@@ -316,6 +316,11 @@
 <span class="kn">from</span> <span class="nn">msrest</span> <span class="k">import</span> <span class="n">Serializer</span><span class="p">,</span> <span class="n">Deserializer</span>
 <span class="kn">from</span> <span class="nn">msrestazure</span> <span class="k">import</span> <span class="n">AzureConfiguration</span>
 <span class="kn">from</span> <span class="nn">.version</span> <span class="k">import</span> <span class="n">VERSION</span>
+<span class="kn">from</span> <span class="nn">msrest.pipeline</span> <span class="k">import</span> <span class="n">ClientRawResponse</span>
+<span class="kn">from</span> <span class="nn">msrestazure.azure_exceptions</span> <span class="k">import</span> <span class="n">CloudError</span>
+<span class="kn">from</span> <span class="nn">msrest.polling</span> <span class="k">import</span> <span class="n">LROPoller</span><span class="p">,</span> <span class="n">NoPolling</span>
+<span class="kn">from</span> <span class="nn">msrestazure.polling.arm_polling</span> <span class="k">import</span> <span class="n">ARMPolling</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
 <span class="kn">from</span> <span class="nn">.operations.container_groups_operations</span> <span class="k">import</span> <span class="n">ContainerGroupsOperations</span>
 <span class="kn">from</span> <span class="nn">.operations.operations</span> <span class="k">import</span> <span class="n">Operations</span>
 <span class="kn">from</span> <span class="nn">.operations.container_group_usage_operations</span> <span class="k">import</span> <span class="n">ContainerGroupUsageOperations</span>
@@ -405,7 +410,130 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="n">ContainerOperations</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">service_association_link</span> <span class="o">=</span> <span class="n">ServiceAssociationLinkOperations</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ContainerInstanceManagementClient.list_cached_images"><a class="viewcode-back" href="../../../../ref/azure.mgmt.containerinstance.html#azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_cached_images">[docs]</a>    <span class="k">def</span> <span class="nf">list_cached_images</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the list of cached images.</span>
+
+<span class="sd">        Get the list of cached images on specific OS type for a subscription in</span>
+<span class="sd">        a region.</span>
+
+<span class="sd">        :param location: The identifier for the physical azure location.</span>
+<span class="sd">        :type location: str</span>
+<span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
+<span class="sd">        :param bool raw: returns the direct response alongside the</span>
+<span class="sd">         deserialized response</span>
+<span class="sd">        :param operation_config: :ref:`Operation configuration</span>
+<span class="sd">         overrides&lt;msrest:optionsforoperations&gt;`.</span>
+<span class="sd">        :return: CachedImagesListResult or ClientRawResponse if raw=true</span>
+<span class="sd">        :rtype: ~azure.mgmt.containerinstance.models.CachedImagesListResult or</span>
+<span class="sd">         ~msrest.pipeline.ClientRawResponse</span>
+<span class="sd">        :raises: :class:`CloudError&lt;msrestazure.azure_exceptions.CloudError&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Construct URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_cached_images</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
+
+        <span class="c1"># Construct parameters</span>
+        <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">query_parameters</span><span class="p">[</span><span class="s1">&#39;api-version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;self.api_version&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Construct headers</span>
+        <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Construct and send request</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
+            <span class="n">exp</span> <span class="o">=</span> <span class="n">CloudError</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">exp</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-ms-request-id&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">exp</span>
+
+        <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">deserialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">(</span><span class="s1">&#39;CachedImagesListResult&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="n">client_raw_response</span> <span class="o">=</span> <span class="n">ClientRawResponse</span><span class="p">(</span><span class="n">deserialized</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">client_raw_response</span>
+
+        <span class="k">return</span> <span class="n">deserialized</span></div>
+    <span class="n">list_cached_images</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/providers/Microsoft.ContainerInstance/locations/</span><span class="si">{location}</span><span class="s1">/cachedImages&#39;</span><span class="p">}</span>
+
+<div class="viewcode-block" id="ContainerInstanceManagementClient.list_capabilities"><a class="viewcode-back" href="../../../../ref/azure.mgmt.containerinstance.html#azure.mgmt.containerinstance.ContainerInstanceManagementClient.list_capabilities">[docs]</a>    <span class="k">def</span> <span class="nf">list_capabilities</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the list of capabilities of the location.</span>
+
+<span class="sd">        Get the list of CPU/memory/GPU capabilities of a region.</span>
+
+<span class="sd">        :param location: The identifier for the physical azure location.</span>
+<span class="sd">        :type location: str</span>
+<span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
+<span class="sd">        :param bool raw: returns the direct response alongside the</span>
+<span class="sd">         deserialized response</span>
+<span class="sd">        :param operation_config: :ref:`Operation configuration</span>
+<span class="sd">         overrides&lt;msrest:optionsforoperations&gt;`.</span>
+<span class="sd">        :return: CapabilitiesListResult or ClientRawResponse if raw=true</span>
+<span class="sd">        :rtype: ~azure.mgmt.containerinstance.models.CapabilitiesListResult or</span>
+<span class="sd">         ~msrest.pipeline.ClientRawResponse</span>
+<span class="sd">        :raises: :class:`CloudError&lt;msrestazure.azure_exceptions.CloudError&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Construct URL</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_capabilities</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
+
+        <span class="c1"># Construct parameters</span>
+        <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">query_parameters</span><span class="p">[</span><span class="s1">&#39;api-version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;self.api_version&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Construct headers</span>
+        <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Construct and send request</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
+            <span class="n">exp</span> <span class="o">=</span> <span class="n">CloudError</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">exp</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-ms-request-id&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">exp</span>
+
+        <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">deserialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">(</span><span class="s1">&#39;CapabilitiesListResult&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="n">client_raw_response</span> <span class="o">=</span> <span class="n">ClientRawResponse</span><span class="p">(</span><span class="n">deserialized</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">client_raw_response</span>
+
+        <span class="k">return</span> <span class="n">deserialized</span></div>
+    <span class="n">list_capabilities</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/providers/Microsoft.ContainerInstance/locations/</span><span class="si">{location}</span><span class="s1">/capabilities&#39;</span><span class="p">}</span></div>
 </pre></div>
 
            </div>
