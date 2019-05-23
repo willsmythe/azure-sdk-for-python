@@ -327,7 +327,7 @@
 <span class="sd">    :param config: Configuration of service client.</span>
 <span class="sd">    :param serializer: An object model serializer.</span>
 <span class="sd">    :param deserializer: An object model deserializer.</span>
-<span class="sd">    :ivar api_version: Client API version. Constant value: &quot;2018-06-01-preview&quot;.</span>
+<span class="sd">    :ivar api_version: Client API version. Constant value: &quot;2019-04-01&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">models</span> <span class="o">=</span> <span class="n">models</span>
@@ -337,7 +337,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span> <span class="o">=</span> <span class="n">serializer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span> <span class="o">=</span> <span class="n">deserializer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="s2">&quot;2018-06-01-preview&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="s2">&quot;2019-04-01&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
 
@@ -361,14 +361,14 @@
 <span class="sd">        :rtype: ~azure.mgmt.devspaces.models.Controller or</span>
 <span class="sd">         ~msrest.pipeline.ClientRawResponse</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Construct URL</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
             <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9](-?[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]([_-]*[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -378,7 +378,7 @@
 
         <span class="c1"># Construct headers</span>
         <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
@@ -387,11 +387,11 @@
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 
         <span class="c1"># Construct and send request</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -413,7 +413,7 @@
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
             <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9](-?[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]([_-]*[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -423,6 +423,7 @@
 
         <span class="c1"># Construct headers</span>
         <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
         <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
@@ -435,12 +436,11 @@
         <span class="n">body_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">body</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="s1">&#39;Controller&#39;</span><span class="p">)</span>
 
         <span class="c1"># Construct and send request</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
-            <span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">body_content</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">body_content</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -481,7 +481,7 @@
 <span class="sd">         or</span>
 <span class="sd">         ~msrestazure.azure_operation.AzureOperationPoller[~msrest.pipeline.ClientRawResponse[~azure.mgmt.devspaces.models.Controller]]</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">raw_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_initial</span><span class="p">(</span>
             <span class="n">resource_group_name</span><span class="o">=</span><span class="n">resource_group_name</span><span class="p">,</span>
@@ -518,7 +518,7 @@
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
             <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9](-?[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]([_-]*[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -528,7 +528,6 @@
 
         <span class="c1"># Construct headers</span>
         <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
@@ -537,11 +536,11 @@
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 
         <span class="c1"># Construct and send request</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">204</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
             <span class="n">client_raw_response</span> <span class="o">=</span> <span class="n">ClientRawResponse</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
@@ -568,7 +567,7 @@
 <span class="sd">        :rtype: ~msrestazure.azure_operation.AzureOperationPoller[None] or</span>
 <span class="sd">         ~msrestazure.azure_operation.AzureOperationPoller[~msrest.pipeline.ClientRawResponse[None]]</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">raw_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete_initial</span><span class="p">(</span>
             <span class="n">resource_group_name</span><span class="o">=</span><span class="n">resource_group_name</span><span class="p">,</span>
@@ -593,7 +592,7 @@
     <span class="n">delete</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/resourceGroups/</span><span class="si">{resourceGroupName}</span><span class="s1">/providers/Microsoft.DevSpaces/controllers/</span><span class="si">{name}</span><span class="s1">&#39;</span><span class="p">}</span>
 
 <div class="viewcode-block" id="ControllersOperations.update"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.operations.html#azure.mgmt.devspaces.operations.ControllersOperations.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target_container_host_credentials_base64</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Updates an Azure Dev Spaces Controller.</span>
 
 <span class="sd">        Updates the properties of an existing Azure Dev Spaces Controller with</span>
@@ -606,6 +605,9 @@
 <span class="sd">        :type name: str</span>
 <span class="sd">        :param tags: Tags for the Azure Dev Spaces Controller.</span>
 <span class="sd">        :type tags: dict[str, str]</span>
+<span class="sd">        :param target_container_host_credentials_base64: Credentials of the</span>
+<span class="sd">         target container host (base64).</span>
+<span class="sd">        :type target_container_host_credentials_base64: str</span>
 <span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
 <span class="sd">        :param bool raw: returns the direct response alongside the</span>
 <span class="sd">         deserialized response</span>
@@ -615,16 +617,16 @@
 <span class="sd">        :rtype: ~azure.mgmt.devspaces.models.Controller or</span>
 <span class="sd">         ~msrest.pipeline.ClientRawResponse</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">controller_update_parameters</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ControllerUpdateParameters</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">)</span>
+        <span class="n">controller_update_parameters</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ControllerUpdateParameters</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span> <span class="n">target_container_host_credentials_base64</span><span class="o">=</span><span class="n">target_container_host_credentials_base64</span><span class="p">)</span>
 
         <span class="c1"># Construct URL</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
             <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9](-?[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]([_-]*[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -634,6 +636,7 @@
 
         <span class="c1"># Construct headers</span>
         <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
         <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
@@ -646,16 +649,17 @@
         <span class="n">body_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">body</span><span class="p">(</span><span class="n">controller_update_parameters</span><span class="p">,</span> <span class="s1">&#39;ControllerUpdateParameters&#39;</span><span class="p">)</span>
 
         <span class="c1"># Construct and send request</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
-            <span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">body_content</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">body_content</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">deserialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">(</span><span class="s1">&#39;Controller&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">:</span>
             <span class="n">deserialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">(</span><span class="s1">&#39;Controller&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
@@ -684,7 +688,7 @@
 <span class="sd">        :rtype:</span>
 <span class="sd">         ~azure.mgmt.devspaces.models.ControllerPaged[~azure.mgmt.devspaces.models.Controller]</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">internal_paging</span><span class="p">(</span><span class="n">next_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
@@ -707,7 +711,7 @@
 
             <span class="c1"># Construct headers</span>
             <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
                 <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
             <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
@@ -716,12 +720,11 @@
                 <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 
             <span class="c1"># Construct and send request</span>
-            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
-                <span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">response</span>
 
@@ -752,7 +755,7 @@
 <span class="sd">        :rtype:</span>
 <span class="sd">         ~azure.mgmt.devspaces.models.ControllerPaged[~azure.mgmt.devspaces.models.Controller]</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">internal_paging</span><span class="p">(</span><span class="n">next_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
@@ -774,7 +777,7 @@
 
             <span class="c1"># Construct headers</span>
             <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
                 <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
             <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
@@ -783,12 +786,11 @@
                 <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 
             <span class="c1"># Construct and send request</span>
-            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
-                <span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">response</span>
 
@@ -804,7 +806,7 @@
     <span class="nb">list</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/providers/Microsoft.DevSpaces/controllers&#39;</span><span class="p">}</span>
 
 <div class="viewcode-block" id="ControllersOperations.list_connection_details"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.operations.html#azure.mgmt.devspaces.operations.ControllersOperations.list_connection_details">[docs]</a>    <span class="k">def</span> <span class="nf">list_connection_details</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">target_container_host_resource_id</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Lists connection details for an Azure Dev Spaces Controller.</span>
 
 <span class="sd">        Lists connection details for the underlying container resources of an</span>
@@ -815,6 +817,9 @@
 <span class="sd">        :type resource_group_name: str</span>
 <span class="sd">        :param name: Name of the resource.</span>
 <span class="sd">        :type name: str</span>
+<span class="sd">        :param target_container_host_resource_id: Resource ID of the target</span>
+<span class="sd">         container host mapped to the Azure Dev Spaces Controller.</span>
+<span class="sd">        :type target_container_host_resource_id: str</span>
 <span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
 <span class="sd">        :param bool raw: returns the direct response alongside the</span>
 <span class="sd">         deserialized response</span>
@@ -825,14 +830,16 @@
 <span class="sd">        :rtype: ~azure.mgmt.devspaces.models.ControllerConnectionDetailsList</span>
 <span class="sd">         or ~msrest.pipeline.ClientRawResponse</span>
 <span class="sd">        :raises:</span>
-<span class="sd">         :class:`ErrorResponseException&lt;azure.mgmt.devspaces.models.ErrorResponseException&gt;`</span>
+<span class="sd">         :class:`DevSpacesErrorResponseException&lt;azure.mgmt.devspaces.models.DevSpacesErrorResponseException&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">list_connection_details_parameters</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ListConnectionDetailsParameters</span><span class="p">(</span><span class="n">target_container_host_resource_id</span><span class="o">=</span><span class="n">target_container_host_resource_id</span><span class="p">)</span>
+
         <span class="c1"># Construct URL</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_connection_details</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
             <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9](-?[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]([_-]*[a-zA-Z0-9])*$&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -842,6 +849,7 @@
 
         <span class="c1"># Construct headers</span>
         <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
         <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
@@ -850,12 +858,15 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 
+        <span class="c1"># Construct body</span>
+        <span class="n">body_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">body</span><span class="p">(</span><span class="n">list_connection_details_parameters</span><span class="p">,</span> <span class="s1">&#39;ListConnectionDetailsParameters&#39;</span><span class="p">)</span>
+
         <span class="c1"># Construct and send request</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">,</span> <span class="n">body_content</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">ErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DevSpacesErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 
         <span class="n">deserialized</span> <span class="o">=</span> <span class="kc">None</span>
 

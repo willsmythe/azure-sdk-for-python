@@ -317,10 +317,10 @@
   <div class="section" id="module-azure.mgmt.devspaces.operations">
 <span id="azure-mgmt-devspaces-operations-module"></span><h1>azure.mgmt.devspaces.operations module<a class="headerlink" href="#module-azure.mgmt.devspaces.operations" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations">
-<em class="property">class </em><code class="descclassname">azure.mgmt.devspaces.operations.</code><code class="descname">ControllersOperations</code><span class="sig-paren">(</span><em>client</em>, <em>config</em>, <em>serializer</em>, <em>deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations" title="Permalink to this definition">¶</a></dt>
+<dt id="azure.mgmt.devspaces.operations.ContainerHostMappingsOperations">
+<em class="property">class </em><code class="descclassname">azure.mgmt.devspaces.operations.</code><code class="descname">ContainerHostMappingsOperations</code><span class="sig-paren">(</span><em>client</em>, <em>config</em>, <em>serializer</em>, <em>deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/container_host_mappings_operations.html#ContainerHostMappingsOperations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ContainerHostMappingsOperations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>ControllersOperations operations.</p>
+<p>ContainerHostMappingsOperations operations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -331,87 +331,22 @@
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Client API version. Constant value: “2018-06-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Client API version. Constant value: “2019-04-01”.</p>
 </dd>
 </dl>
 <dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.create">
-<code class="descname">create</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>controller</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>polling=True</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates an Azure Dev Spaces Controller.</p>
-<p>Creates an Azure Dev Spaces Controller with the specified create
-parameters.</p>
+<dt id="azure.mgmt.devspaces.operations.ContainerHostMappingsOperations.get_container_host_mapping">
+<code class="descname">get_container_host_mapping</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>location</em>, <em>container_host_resource_id=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/container_host_mappings_operations.html#ContainerHostMappingsOperations.get_container_host_mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ContainerHostMappingsOperations.get_container_host_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns container host mapping object for a container host resource ID
+if an associated controller exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
 belongs.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
-<li><p><strong>controller</strong> (<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller"><em>Controller</em></a>) – Controller create parameters.</p></li>
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
-direct response alongside the deserialized response</p></li>
-<li><p><strong>polling</strong> – True for ARMPolling, False for no polling, or a
-polling object for personal polling strategy</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An instance of LROPoller that returns Controller or
-ClientRawResponse&lt;Controller&gt; if raw==True</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>AzureOperationPoller[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]
-or
-AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]]</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.delete">
-<code class="descname">delete</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>polling=True</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes an Azure Dev Spaces Controller.</p>
-<p>Deletes an existing Azure Dev Spaces Controller.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
-belongs.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
-direct response alongside the deserialized response</p></li>
-<li><p><strong>polling</strong> – True for ARMPolling, False for no polling, or a
-polling object for personal polling strategy</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An instance of LROPoller that returns None or
-ClientRawResponse&lt;None&gt; if raw==True</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>AzureOperationPoller[<a class="reference external" href="https://docs.python.org/3.5/library/constants.html#None" title="(in Python v3.5)">None</a>] or
-AzureOperationPoller[ClientRawResponse[<a class="reference external" href="https://docs.python.org/3.5/library/constants.html#None" title="(in Python v3.5)">None</a>]]</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets an Azure Dev Spaces Controller.</p>
-<p>Gets the properties for an Azure Dev Spaces Controller.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
-belongs.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Location of the container host.</p></li>
+<li><p><strong>container_host_resource_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – ARM ID of the Container Host
+resource</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -420,146 +355,22 @@ overrides</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Controller or ClientRawResponse if raw=true</p>
+<dd class="field-even"><p>ContainerHostMapping or ClientRawResponse if raw=true</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a> or
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ContainerHostMapping" title="azure.mgmt.devspaces.models.ContainerHostMapping">ContainerHostMapping</a> or
 ClientRawResponse</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list">
-<code class="descname">list</code><span class="sig-paren">(</span><em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Lists the Azure Dev Spaces Controllers in a subscription.</p>
-<p>Lists all the Azure Dev Spaces Controllers with their properties in the
-subscription.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
-deserialized response</p></li>
-<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
-overrides</span>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An iterator like instance of Controller</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerPaged" title="azure.mgmt.devspaces.models.ControllerPaged">ControllerPaged</a>[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list_by_resource_group">
-<code class="descname">list_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list_by_resource_group" title="Permalink to this definition">¶</a></dt>
-<dd><p>Lists the Azure Dev Spaces Controllers in a resource group.</p>
-<p>Lists all the Azure Dev Spaces Controllers with their properties in the
-specified resource group and subscription.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
-belongs.</p></li>
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
-deserialized response</p></li>
-<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
-overrides</span>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An iterator like instance of Controller</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerPaged" title="azure.mgmt.devspaces.models.ControllerPaged">ControllerPaged</a>[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list_connection_details">
-<code class="descname">list_connection_details</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list_connection_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list_connection_details" title="Permalink to this definition">¶</a></dt>
-<dd><p>Lists connection details for an Azure Dev Spaces Controller.</p>
-<p>Lists connection details for the underlying container resources of an
-Azure Dev Spaces Controller.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
-belongs.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
-deserialized response</p></li>
-<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
-overrides</span>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>ControllerConnectionDetailsList or ClientRawResponse if
-raw=true</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerConnectionDetailsList" title="azure.mgmt.devspaces.models.ControllerConnectionDetailsList">ControllerConnectionDetailsList</a>
-or ClientRawResponse</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.devspaces.models' from 'd:\\a\\1\\s\\azure-mgmt-devspaces\\azure\\mgmt\\devspaces\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.models" title="Permalink to this definition">¶</a></dt>
+<dt id="azure.mgmt.devspaces.operations.ContainerHostMappingsOperations.models">
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.devspaces.models' from 'd:\\a\\1\\s\\sdk\\aks\\azure-mgmt-devspaces\\azure\\mgmt\\devspaces\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.devspaces.operations.ContainerHostMappingsOperations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="azure.mgmt.devspaces.operations.ControllersOperations.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>tags=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates an Azure Dev Spaces Controller.</p>
-<p>Updates the properties of an existing Azure Dev Spaces Controller with
-the specified update parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
-belongs.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
-<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags for the Azure Dev Spaces Controller.</p></li>
-<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
-<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
-deserialized response</p></li>
-<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
-overrides</span>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Controller or ClientRawResponse if raw=true</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a> or
-ClientRawResponse</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ErrorResponseException" title="azure.mgmt.devspaces.models.ErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorResponseException</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
 
 </dd></dl>
 
@@ -578,7 +389,7 @@ ClientRawResponse</p>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
-<dd class="field-even"><p><strong>api_version</strong> – Client API version. Constant value: “2018-06-01-preview”.</p>
+<dd class="field-even"><p><strong>api_version</strong> – Client API version. Constant value: “2019-04-01”.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -612,8 +423,259 @@ ResourceProviderOperationDefinition</p>
 
 <dl class="attribute">
 <dt id="azure.mgmt.devspaces.operations.Operations.models">
-<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.devspaces.models' from 'd:\\a\\1\\s\\azure-mgmt-devspaces\\azure\\mgmt\\devspaces\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.devspaces.operations.Operations.models" title="Permalink to this definition">¶</a></dt>
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.devspaces.models' from 'd:\\a\\1\\s\\sdk\\aks\\azure-mgmt-devspaces\\azure\\mgmt\\devspaces\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.devspaces.operations.Operations.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations">
+<em class="property">class </em><code class="descclassname">azure.mgmt.devspaces.operations.</code><code class="descname">ControllersOperations</code><span class="sig-paren">(</span><em>client</em>, <em>config</em>, <em>serializer</em>, <em>deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/functions.html#object" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>ControllersOperations operations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Client for service requests.</p></li>
+<li><p><strong>config</strong> – Configuration of service client.</p></li>
+<li><p><strong>serializer</strong> – An object model serializer.</p></li>
+<li><p><strong>deserializer</strong> – An object model deserializer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><p><strong>api_version</strong> – Client API version. Constant value: “2019-04-01”.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>controller</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>polling=True</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an Azure Dev Spaces Controller.</p>
+<p>Creates an Azure Dev Spaces Controller with the specified create
+parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>controller</strong> (<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller"><em>Controller</em></a>) – Controller create parameters.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
+direct response alongside the deserialized response</p></li>
+<li><p><strong>polling</strong> – True for ARMPolling, False for no polling, or a
+polling object for personal polling strategy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An instance of LROPoller that returns Controller or
+ClientRawResponse&lt;Controller&gt; if raw==True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>AzureOperationPoller[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]
+or
+AzureOperationPoller[ClientRawResponse[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>polling=True</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an Azure Dev Spaces Controller.</p>
+<p>Deletes an existing Azure Dev Spaces Controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – The poller return type is ClientRawResponse, the
+direct response alongside the deserialized response</p></li>
+<li><p><strong>polling</strong> – True for ARMPolling, False for no polling, or a
+polling object for personal polling strategy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An instance of LROPoller that returns None or
+ClientRawResponse&lt;None&gt; if raw==True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>AzureOperationPoller[<a class="reference external" href="https://docs.python.org/3.5/library/constants.html#None" title="(in Python v3.5)">None</a>] or
+AzureOperationPoller[ClientRawResponse[<a class="reference external" href="https://docs.python.org/3.5/library/constants.html#None" title="(in Python v3.5)">None</a>]]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets an Azure Dev Spaces Controller.</p>
+<p>Gets the properties for an Azure Dev Spaces Controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Controller or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list">
+<code class="descname">list</code><span class="sig-paren">(</span><em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the Azure Dev Spaces Controllers in a subscription.</p>
+<p>Lists all the Azure Dev Spaces Controllers with their properties in the
+subscription.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An iterator like instance of Controller</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerPaged" title="azure.mgmt.devspaces.models.ControllerPaged">ControllerPaged</a>[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list_by_resource_group">
+<code class="descname">list_by_resource_group</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list_by_resource_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list_by_resource_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the Azure Dev Spaces Controllers in a resource group.</p>
+<p>Lists all the Azure Dev Spaces Controllers with their properties in the
+specified resource group and subscription.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An iterator like instance of Controller</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerPaged" title="azure.mgmt.devspaces.models.ControllerPaged">ControllerPaged</a>[<a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a>]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.list_connection_details">
+<code class="descname">list_connection_details</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>target_container_host_resource_id</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.list_connection_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.list_connection_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists connection details for an Azure Dev Spaces Controller.</p>
+<p>Lists connection details for the underlying container resources of an
+Azure Dev Spaces Controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>target_container_host_resource_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource ID of the target
+container host mapped to the Azure Dev Spaces Controller.</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ControllerConnectionDetailsList or ClientRawResponse if
+raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerConnectionDetailsList" title="azure.mgmt.devspaces.models.ControllerConnectionDetailsList">ControllerConnectionDetailsList</a>
+or ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.models">
+<code class="descname">models</code><em class="property"> = &lt;module 'azure.mgmt.devspaces.models' from 'd:\\a\\1\\s\\sdk\\aks\\azure-mgmt-devspaces\\azure\\mgmt\\devspaces\\models\\__init__.py'&gt;</em><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.models" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="azure.mgmt.devspaces.operations.ControllersOperations.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>resource_group_name</em>, <em>name</em>, <em>tags=None</em>, <em>target_container_host_credentials_base64=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/devspaces/operations/controllers_operations.html#ControllersOperations.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.devspaces.operations.ControllersOperations.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an Azure Dev Spaces Controller.</p>
+<p>Updates the properties of an existing Azure Dev Spaces Controller with
+the specified update parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_group_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Resource group to which the resource
+belongs.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name of the resource.</p></li>
+<li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags for the Azure Dev Spaces Controller.</p></li>
+<li><p><strong>target_container_host_credentials_base64</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Credentials of the
+target container host (base64).</p></li>
+<li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Controller or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.Controller" title="azure.mgmt.devspaces.models.Controller">Controller</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException" title="azure.mgmt.devspaces.models.DevSpacesErrorResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevSpacesErrorResponseException</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

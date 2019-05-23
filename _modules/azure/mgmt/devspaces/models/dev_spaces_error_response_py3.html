@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>azure.mgmt.devspaces.models.dev_spaces_management_client_enums &mdash; Azure SDK for Python 2.0.0 documentation</title>
+  <title>azure.mgmt.devspaces.models.dev_spaces_error_response_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
   
 
   
@@ -285,7 +285,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>azure.mgmt.devspaces.models.dev_spaces_management_client_enums</li>
+      <li>azure.mgmt.devspaces.models.dev_spaces_error_response_py3</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -300,7 +300,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for azure.mgmt.devspaces.models.dev_spaces_management_client_enums</h1><div class="highlight"><pre>
+  <h1>Source code for azure.mgmt.devspaces.models.dev_spaces_error_response_py3</h1><div class="highlight"><pre>
 <span></span><span class="c1"># coding=utf-8</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 <span class="c1"># Copyright (c) Microsoft Corporation. All rights reserved.</span>
@@ -312,23 +312,37 @@
 <span class="c1"># regenerated.</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 
-<span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">msrest.serialization</span> <span class="k">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">msrest.exceptions</span> <span class="k">import</span> <span class="n">HttpOperationError</span>
 
 
-<div class="viewcode-block" id="ProvisioningState"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ProvisioningState">[docs]</a><span class="k">class</span> <span class="nc">ProvisioningState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="DevSpacesErrorResponse"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponse">[docs]</a><span class="k">class</span> <span class="nc">DevSpacesErrorResponse</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Error response indicates that the service is not able to process the</span>
+<span class="sd">    incoming request. The reason is provided in the error message.</span>
 
-    <span class="n">succeeded</span> <span class="o">=</span> <span class="s2">&quot;Succeeded&quot;</span>
-    <span class="n">failed</span> <span class="o">=</span> <span class="s2">&quot;Failed&quot;</span>
-    <span class="n">canceled</span> <span class="o">=</span> <span class="s2">&quot;Canceled&quot;</span>
-    <span class="n">updating</span> <span class="o">=</span> <span class="s2">&quot;Updating&quot;</span>
-    <span class="n">creating</span> <span class="o">=</span> <span class="s2">&quot;Creating&quot;</span>
-    <span class="n">deleting</span> <span class="o">=</span> <span class="s2">&quot;Deleting&quot;</span>
-    <span class="n">deleted</span> <span class="o">=</span> <span class="s2">&quot;Deleted&quot;</span></div>
+<span class="sd">    :param error: The details of the error.</span>
+<span class="sd">    :type error: ~azure.mgmt.devspaces.models.ErrorDetails</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_attribute_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ErrorDetails&#39;</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DevSpacesErrorResponse</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span></div>
 
 
-<div class="viewcode-block" id="SkuTier"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.SkuTier">[docs]</a><span class="k">class</span> <span class="nc">SkuTier</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="DevSpacesErrorResponseException"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.DevSpacesErrorResponseException">[docs]</a><span class="k">class</span> <span class="nc">DevSpacesErrorResponseException</span><span class="p">(</span><span class="n">HttpOperationError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Server responsed with exception of type: &#39;DevSpacesErrorResponse&#39;.</span>
 
-    <span class="n">standard</span> <span class="o">=</span> <span class="s2">&quot;Standard&quot;</span></div>
+<span class="sd">    :param deserialize: A deserializer</span>
+<span class="sd">    :param response: Server response to be deserialized.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">DevSpacesErrorResponseException</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="s1">&#39;DevSpacesErrorResponse&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

@@ -318,38 +318,17 @@
 <div class="viewcode-block" id="ControllerConnectionDetails"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.devspaces.models.html#azure.mgmt.devspaces.models.ControllerConnectionDetails">[docs]</a><span class="k">class</span> <span class="nc">ControllerConnectionDetails</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;ControllerConnectionDetails.</span>
 
-<span class="sd">    Variables are only populated by the server, and will be ignored when</span>
-<span class="sd">    sending a request.</span>
-
-<span class="sd">    :ivar auth_key: Authentication key for communicating with services.</span>
-<span class="sd">    :vartype auth_key: str</span>
-<span class="sd">    :ivar workspace_storage_account_name: Workspace storage account name.</span>
-<span class="sd">    :vartype workspace_storage_account_name: str</span>
-<span class="sd">    :ivar workspace_storage_sas_token: Workspace storage account SAS token.</span>
-<span class="sd">    :vartype workspace_storage_sas_token: str</span>
 <span class="sd">    :param orchestrator_specific_connection_details:</span>
 <span class="sd">    :type orchestrator_specific_connection_details:</span>
 <span class="sd">     ~azure.mgmt.devspaces.models.OrchestratorSpecificConnectionDetails</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;auth_key&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s1">&#39;workspace_storage_account_name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s1">&#39;workspace_storage_sas_token&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-    <span class="p">}</span>
-
     <span class="n">_attribute_map</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;auth_key&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;authKey&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;workspace_storage_account_name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;workspaceStorageAccountName&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;workspace_storage_sas_token&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;workspaceStorageSasToken&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
         <span class="s1">&#39;orchestrator_specific_connection_details&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;orchestratorSpecificConnectionDetails&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;OrchestratorSpecificConnectionDetails&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">orchestrator_specific_connection_details</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ControllerConnectionDetails</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">auth_key</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">workspace_storage_account_name</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">workspace_storage_sas_token</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">orchestrator_specific_connection_details</span> <span class="o">=</span> <span class="n">orchestrator_specific_connection_details</span></div>
 </pre></div>
 

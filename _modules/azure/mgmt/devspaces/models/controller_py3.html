@@ -335,12 +335,12 @@
 <span class="sd">    :type location: str</span>
 <span class="sd">    :ivar provisioning_state: Provisioning state of the Azure Dev Spaces</span>
 <span class="sd">     Controller. Possible values include: &#39;Succeeded&#39;, &#39;Failed&#39;, &#39;Canceled&#39;,</span>
-<span class="sd">     &#39;Updating&#39;, &#39;Creating&#39;, &#39;Deleting&#39;</span>
+<span class="sd">     &#39;Updating&#39;, &#39;Creating&#39;, &#39;Deleting&#39;, &#39;Deleted&#39;</span>
 <span class="sd">    :vartype provisioning_state: str or</span>
 <span class="sd">     ~azure.mgmt.devspaces.models.ProvisioningState</span>
-<span class="sd">    :param host_suffix: Required. DNS suffix for public endpoints running in</span>
-<span class="sd">     the Azure Dev Spaces Controller.</span>
-<span class="sd">    :type host_suffix: str</span>
+<span class="sd">    :ivar host_suffix: DNS suffix for public endpoints running in the Azure</span>
+<span class="sd">     Dev Spaces Controller.</span>
+<span class="sd">    :vartype host_suffix: str</span>
 <span class="sd">    :ivar data_plane_fqdn: DNS name for accessing DataPlane services</span>
 <span class="sd">    :vartype data_plane_fqdn: str</span>
 <span class="sd">    :param target_container_host_resource_id: Required. Resource ID of the</span>
@@ -358,7 +358,7 @@
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="s1">&#39;provisioning_state&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s1">&#39;host_suffix&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;host_suffix&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="s1">&#39;data_plane_fqdn&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="s1">&#39;target_container_host_resource_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="s1">&#39;target_container_host_credentials_base64&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
@@ -379,10 +379,10 @@
         <span class="s1">&#39;sku&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;sku&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Sku&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">host_suffix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_container_host_resource_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_container_host_credentials_base64</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sku</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">target_container_host_resource_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_container_host_credentials_base64</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sku</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Controller</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">provisioning_state</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">host_suffix</span> <span class="o">=</span> <span class="n">host_suffix</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host_suffix</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_plane_fqdn</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target_container_host_resource_id</span> <span class="o">=</span> <span class="n">target_container_host_resource_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target_container_host_credentials_base64</span> <span class="o">=</span> <span class="n">target_container_host_credentials_base64</span>
