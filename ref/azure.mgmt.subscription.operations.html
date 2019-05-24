@@ -385,11 +385,12 @@ ClientRawResponse</p>
 </dl>
 <dl class="method">
 <dt id="azure.mgmt.subscription.operations.SubscriptionsOperations.cancel">
-<code class="descname">cancel</code><span class="sig-paren">(</span><em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/subscription/operations/subscriptions_operations.html#SubscriptionsOperations.cancel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.subscription.operations.SubscriptionsOperations.cancel" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cancel</code><span class="sig-paren">(</span><em>subscription_id</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/subscription/operations/subscriptions_operations.html#SubscriptionsOperations.cancel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.subscription.operations.SubscriptionsOperations.cancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cancels the subscription.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>subscription_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Subscription Id.</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the
 deserialized response</p></li>
@@ -501,11 +502,12 @@ overrides</span>.</p></li>
 
 <dl class="method">
 <dt id="azure.mgmt.subscription.operations.SubscriptionsOperations.rename">
-<code class="descname">rename</code><span class="sig-paren">(</span><em>subscription_name=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/subscription/operations/subscriptions_operations.html#SubscriptionsOperations.rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.subscription.operations.SubscriptionsOperations.rename" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rename</code><span class="sig-paren">(</span><em>subscription_id</em>, <em>subscription_name=None</em>, <em>custom_headers=None</em>, <em>raw=False</em>, <em>**operation_config</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/subscription/operations/subscriptions_operations.html#SubscriptionsOperations.rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.subscription.operations.SubscriptionsOperations.rename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the subscription.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>subscription_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Subscription Id.</p></li>
 <li><p><strong>subscription_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – New subscription name</p></li>
 <li><p><strong>custom_headers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) – headers that will be added to the request</p></li>
 <li><p><strong>raw</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – returns the direct response alongside the

@@ -339,9 +339,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
 
 <div class="viewcode-block" id="SubscriptionsOperations.cancel"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.subscription.operations.html#azure.mgmt.subscription.operations.SubscriptionsOperations.cancel">[docs]</a>    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">subscription_id</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Cancels the subscription.</span>
 
+<span class="sd">        :param subscription_id: Subscription Id.</span>
+<span class="sd">        :type subscription_id: str</span>
 <span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
 <span class="sd">        :param bool raw: returns the direct response alongside the</span>
 <span class="sd">         deserialized response</span>
@@ -358,7 +360,7 @@
         <span class="c1"># Construct URL</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;subscription_id&quot;</span><span class="p">,</span> <span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
@@ -396,9 +398,11 @@
     <span class="n">cancel</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/providers/Microsoft.Subscription/cancel&#39;</span><span class="p">}</span>
 
 <div class="viewcode-block" id="SubscriptionsOperations.rename"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.subscription.operations.html#azure.mgmt.subscription.operations.SubscriptionsOperations.rename">[docs]</a>    <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">subscription_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">subscription_id</span><span class="p">,</span> <span class="n">subscription_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Renames the subscription.</span>
 
+<span class="sd">        :param subscription_id: Subscription Id.</span>
+<span class="sd">        :type subscription_id: str</span>
 <span class="sd">        :param subscription_name: New subscription name</span>
 <span class="sd">        :type subscription_name: str</span>
 <span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
@@ -419,7 +423,7 @@
         <span class="c1"># Construct URL</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rename</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
         <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;subscription_id&quot;</span><span class="p">,</span> <span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
 
