@@ -335,6 +335,8 @@
 <span class="sd">    :type location: str</span>
 <span class="sd">    :param tags: Tags to help categorize the resource in the Azure portal.</span>
 <span class="sd">    :type tags: dict[str, str]</span>
+<span class="sd">    :param identity: The identity of the resource.</span>
+<span class="sd">    :type identity: ~azure.mgmt.search.models.Identity</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
@@ -349,15 +351,17 @@
         <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
         <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
         <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{str}</span><span class="s1">&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;identity&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Identity&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">identity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Resource</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">identity</span> <span class="o">=</span> <span class="n">identity</span></div>
 </pre></div>
 
            </div>

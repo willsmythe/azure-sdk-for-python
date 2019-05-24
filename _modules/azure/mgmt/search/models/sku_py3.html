@@ -323,10 +323,13 @@
 <span class="sd">     Shared service. &#39;basic&#39;: Dedicated service with up to 3 replicas.</span>
 <span class="sd">     &#39;standard&#39;: Dedicated service with up to 12 partitions and 12 replicas.</span>
 <span class="sd">     &#39;standard2&#39;: Similar to standard, but with more capacity per search unit.</span>
-<span class="sd">     &#39;standard3&#39;: Offers maximum capacity per search unit with up to 12</span>
-<span class="sd">     partitions and 12 replicas (or up to 3 partitions with more indexes if you</span>
-<span class="sd">     also set the hostingMode property to &#39;highDensity&#39;). Possible values</span>
-<span class="sd">     include: &#39;free&#39;, &#39;basic&#39;, &#39;standard&#39;, &#39;standard2&#39;, &#39;standard3&#39;</span>
+<span class="sd">     &#39;standard3&#39;: The largest Standard offering with up to 12 partitions and 12</span>
+<span class="sd">     replicas (or up to 3 partitions with more indexes if you also set the</span>
+<span class="sd">     hostingMode property to &#39;highDensity&#39;). &#39;storage_optimized_l1&#39;: Supports</span>
+<span class="sd">     1TB per partition, up to 12 partitions. &#39;storage_optimized_l2&#39;: Supports</span>
+<span class="sd">     2TB per partition, up to 12 partitions.&#39;. Possible values include: &#39;free&#39;,</span>
+<span class="sd">     &#39;basic&#39;, &#39;standard&#39;, &#39;standard2&#39;, &#39;standard3&#39;, &#39;storage_optimized_l1&#39;,</span>
+<span class="sd">     &#39;storage_optimized_l2&#39;</span>
 <span class="sd">    :type name: str or ~azure.mgmt.search.models.SkuName</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 

@@ -416,17 +416,20 @@ capacity limits.</p>
 Shared service. ‘basic’: Dedicated service with up to 3 replicas.
 ‘standard’: Dedicated service with up to 12 partitions and 12 replicas.
 ‘standard2’: Similar to standard, but with more capacity per search unit.
-‘standard3’: Offers maximum capacity per search unit with up to 12
-partitions and 12 replicas (or up to 3 partitions with more indexes if you
-also set the hostingMode property to ‘highDensity’). Possible values
-include: ‘free’, ‘basic’, ‘standard’, ‘standard2’, ‘standard3’</p>
+‘standard3’: The largest Standard offering with up to 12 partitions and 12
+replicas (or up to 3 partitions with more indexes if you also set the
+hostingMode property to ‘highDensity’). ‘storage_optimized_l1’: Supports
+1TB per partition, up to 12 partitions. ‘storage_optimized_l2’: Supports
+2TB per partition, up to 12 partitions.’. Possible values include: ‘free’,
+‘basic’, ‘standard’, ‘standard2’, ‘standard3’, ‘storage_optimized_l1’,
+‘storage_optimized_l2’</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="azure.mgmt.search.models.SearchService">
-<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">SearchService</code><span class="sig-paren">(</span><em>*</em>, <em>location: str = None</em>, <em>tags=None</em>, <em>replica_count: int = 1</em>, <em>partition_count: int = 1</em>, <em>hosting_mode='default'</em>, <em>sku=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/search/models/search_service_py3.html#SearchService"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.SearchService" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">SearchService</code><span class="sig-paren">(</span><em>*</em>, <em>location: str = None</em>, <em>tags=None</em>, <em>identity=None</em>, <em>replica_count: int = 1</em>, <em>partition_count: int = 1</em>, <em>hosting_mode='default'</em>, <em>sku=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/search/models/search_service_py3.html#SearchService"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.SearchService" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.search.models.resource_py3.Resource</span></code></p>
 <p>Describes an Azure Search service and its current state.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -474,6 +477,7 @@ of the supported and registered Azure Geo Regions (for example, West US,
 East US, Southeast Asia, and so forth). This property is required when
 creating a new resource.</p></li>
 <li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags to help categorize the resource in the Azure portal.</p></li>
+<li><p><strong>identity</strong> (<a class="reference internal" href="#azure.mgmt.search.models.Identity" title="azure.mgmt.search.models.Identity"><em>Identity</em></a>) – The identity of the resource.</p></li>
 <li><p><strong>replica_count</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The number of replicas in the Search service. If
 specified, it must be a value between 1 and 12 inclusive for standard SKUs
 or between 1 and 3 inclusive for basic SKU. Default value: 1 .</p></li>
@@ -496,8 +500,30 @@ Service.</p></li>
 </dd></dl>
 
 <dl class="class">
+<dt id="azure.mgmt.search.models.Identity">
+<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">Identity</code><span class="sig-paren">(</span><em>*</em>, <em>type</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/search/models/identity_py3.html#Identity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.Identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>Identity for the resource.</p>
+<p>Variables are only populated by the server, and will be ignored when
+sending a request.</p>
+<p>All required parameters must be populated in order to send to Azure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>principal_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The principal ID of resource identity.</p></li>
+<li><p><strong>tenant_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The tenant ID of resource.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference internal" href="#azure.mgmt.search.models.IdentityType" title="azure.mgmt.search.models.IdentityType"><em>IdentityType</em></a>) – Required. The identity type. Possible values include: ‘None’,
+‘SystemAssigned’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
 <dt id="azure.mgmt.search.models.Resource">
-<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">Resource</code><span class="sig-paren">(</span><em>*</em>, <em>location: str = None</em>, <em>tags=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/search/models/resource_py3.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.Resource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">Resource</code><span class="sig-paren">(</span><em>*</em>, <em>location: str = None</em>, <em>tags=None</em>, <em>identity=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/search/models/resource_py3.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.Resource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>Base type for all Azure resources.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -518,6 +544,7 @@ of the supported and registered Azure Geo Regions (for example, West US,
 East US, Southeast Asia, and so forth). This property is required when
 creating a new resource.</p></li>
 <li><p><strong>tags</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Tags to help categorize the resource in the Azure portal.</p></li>
+<li><p><strong>identity</strong> (<a class="reference internal" href="#azure.mgmt.search.models.Identity" title="azure.mgmt.search.models.Identity"><em>Identity</em></a>) – The identity of the resource.</p></li>
 </ul>
 </dd>
 </dl>
@@ -643,6 +670,16 @@ as a way to track the request.</p>
 <code class="descname">standard3</code><em class="property"> = 'standard3'</em><a class="headerlink" href="#azure.mgmt.search.models.SkuName.standard3" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="azure.mgmt.search.models.SkuName.storage_optimized_l1">
+<code class="descname">storage_optimized_l1</code><em class="property"> = 'storage_optimized_l1'</em><a class="headerlink" href="#azure.mgmt.search.models.SkuName.storage_optimized_l1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="azure.mgmt.search.models.SkuName.storage_optimized_l2">
+<code class="descname">storage_optimized_l2</code><em class="property"> = 'storage_optimized_l2'</em><a class="headerlink" href="#azure.mgmt.search.models.SkuName.storage_optimized_l2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -717,6 +754,23 @@ as a way to track the request.</p>
 <dl class="attribute">
 <dt id="azure.mgmt.search.models.ProvisioningState.succeeded">
 <code class="descname">succeeded</code><em class="property"> = 'succeeded'</em><a class="headerlink" href="#azure.mgmt.search.models.ProvisioningState.succeeded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.search.models.IdentityType">
+<em class="property">class </em><code class="descclassname">azure.mgmt.search.models.</code><code class="descname">IdentityType</code><a class="reference internal" href="../_modules/azure/mgmt/search/models/search_management_client_enums.html#IdentityType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.search.models.IdentityType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.5/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="azure.mgmt.search.models.IdentityType.none">
+<code class="descname">none</code><em class="property"> = 'None'</em><a class="headerlink" href="#azure.mgmt.search.models.IdentityType.none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="azure.mgmt.search.models.IdentityType.system_assigned">
+<code class="descname">system_assigned</code><em class="property"> = 'SystemAssigned'</em><a class="headerlink" href="#azure.mgmt.search.models.IdentityType.system_assigned" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

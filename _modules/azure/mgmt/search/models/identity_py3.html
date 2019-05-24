@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>azure.mgmt.search.models.search_management_client_enums &mdash; Azure SDK for Python 2.0.0 documentation</title>
+  <title>azure.mgmt.search.models.identity_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
   
 
   
@@ -285,7 +285,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>azure.mgmt.search.models.search_management_client_enums</li>
+      <li>azure.mgmt.search.models.identity_py3</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -300,7 +300,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for azure.mgmt.search.models.search_management_client_enums</h1><div class="highlight"><pre>
+  <h1>Source code for azure.mgmt.search.models.identity_py3</h1><div class="highlight"><pre>
 <span></span><span class="c1"># coding=utf-8</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 <span class="c1"># Copyright (c) Microsoft Corporation. All rights reserved.</span>
@@ -312,59 +312,43 @@
 <span class="c1"># regenerated.</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 
-<span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">msrest.serialization</span> <span class="k">import</span> <span class="n">Model</span>
 
 
-<div class="viewcode-block" id="UnavailableNameReason"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.UnavailableNameReason">[docs]</a><span class="k">class</span> <span class="nc">UnavailableNameReason</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="Identity"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.Identity">[docs]</a><span class="k">class</span> <span class="nc">Identity</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Identity for the resource.</span>
 
-    <span class="n">invalid</span> <span class="o">=</span> <span class="s2">&quot;Invalid&quot;</span>
-    <span class="n">already_exists</span> <span class="o">=</span> <span class="s2">&quot;AlreadyExists&quot;</span></div>
+<span class="sd">    Variables are only populated by the server, and will be ignored when</span>
+<span class="sd">    sending a request.</span>
 
+<span class="sd">    All required parameters must be populated in order to send to Azure.</span>
 
-<div class="viewcode-block" id="SkuName"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.SkuName">[docs]</a><span class="k">class</span> <span class="nc">SkuName</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="sd">    :ivar principal_id: The principal ID of resource identity.</span>
+<span class="sd">    :vartype principal_id: str</span>
+<span class="sd">    :ivar tenant_id: The tenant ID of resource.</span>
+<span class="sd">    :vartype tenant_id: str</span>
+<span class="sd">    :param type: Required. The identity type. Possible values include: &#39;None&#39;,</span>
+<span class="sd">     &#39;SystemAssigned&#39;</span>
+<span class="sd">    :type type: str or ~azure.mgmt.search.models.IdentityType</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">free</span> <span class="o">=</span> <span class="s2">&quot;free&quot;</span>
-    <span class="n">basic</span> <span class="o">=</span> <span class="s2">&quot;basic&quot;</span>
-    <span class="n">standard</span> <span class="o">=</span> <span class="s2">&quot;standard&quot;</span>
-    <span class="n">standard2</span> <span class="o">=</span> <span class="s2">&quot;standard2&quot;</span>
-    <span class="n">standard3</span> <span class="o">=</span> <span class="s2">&quot;standard3&quot;</span>
-    <span class="n">storage_optimized_l1</span> <span class="o">=</span> <span class="s2">&quot;storage_optimized_l1&quot;</span>
-    <span class="n">storage_optimized_l2</span> <span class="o">=</span> <span class="s2">&quot;storage_optimized_l2&quot;</span></div>
+    <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;principal_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;tenant_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">}</span>
 
+    <span class="n">_attribute_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;principal_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;principalId&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;tenant_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;tenantId&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;IdentityType&#39;</span><span class="p">},</span>
+    <span class="p">}</span>
 
-<div class="viewcode-block" id="HostingMode"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.HostingMode">[docs]</a><span class="k">class</span> <span class="nc">HostingMode</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-
-    <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
-    <span class="n">high_density</span> <span class="o">=</span> <span class="s2">&quot;highDensity&quot;</span></div>
-
-
-<div class="viewcode-block" id="SearchServiceStatus"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.SearchServiceStatus">[docs]</a><span class="k">class</span> <span class="nc">SearchServiceStatus</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-
-    <span class="n">running</span> <span class="o">=</span> <span class="s2">&quot;running&quot;</span>
-    <span class="n">provisioning</span> <span class="o">=</span> <span class="s2">&quot;provisioning&quot;</span>
-    <span class="n">deleting</span> <span class="o">=</span> <span class="s2">&quot;deleting&quot;</span>
-    <span class="n">degraded</span> <span class="o">=</span> <span class="s2">&quot;degraded&quot;</span>
-    <span class="n">disabled</span> <span class="o">=</span> <span class="s2">&quot;disabled&quot;</span>
-    <span class="n">error</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span></div>
-
-
-<div class="viewcode-block" id="ProvisioningState"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.ProvisioningState">[docs]</a><span class="k">class</span> <span class="nc">ProvisioningState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-
-    <span class="n">succeeded</span> <span class="o">=</span> <span class="s2">&quot;succeeded&quot;</span>
-    <span class="n">provisioning</span> <span class="o">=</span> <span class="s2">&quot;provisioning&quot;</span>
-    <span class="n">failed</span> <span class="o">=</span> <span class="s2">&quot;failed&quot;</span></div>
-
-
-<div class="viewcode-block" id="IdentityType"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.IdentityType">[docs]</a><span class="k">class</span> <span class="nc">IdentityType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-
-    <span class="n">none</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
-    <span class="n">system_assigned</span> <span class="o">=</span> <span class="s2">&quot;SystemAssigned&quot;</span></div>
-
-
-<div class="viewcode-block" id="AdminKeyKind"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.search.models.html#azure.mgmt.search.models.AdminKeyKind">[docs]</a><span class="k">class</span> <span class="nc">AdminKeyKind</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-
-    <span class="n">primary</span> <span class="o">=</span> <span class="s2">&quot;primary&quot;</span>
-    <span class="n">secondary</span> <span class="o">=</span> <span class="s2">&quot;secondary&quot;</span></div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Identity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">principal_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span></div>
 </pre></div>
 
            </div>
