@@ -1193,6 +1193,80 @@
         <span class="k">return</span> <span class="n">deserialized</span></div>
     <span class="n">get_diagnostics_item</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/resourceGroups/</span><span class="si">{resourceGroupName}</span><span class="s1">/providers/Microsoft.Web/hostingEnvironments/</span><span class="si">{name}</span><span class="s1">/diagnostics/</span><span class="si">{diagnosticsName}</span><span class="s1">&#39;</span><span class="p">}</span>
 
+<div class="viewcode-block" id="AppServiceEnvironmentsOperations.get_inbound_network_dependencies_endpoints"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.operations.html#azure.mgmt.web.operations.AppServiceEnvironmentsOperations.get_inbound_network_dependencies_endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">get_inbound_network_dependencies_endpoints</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the network endpoints of all inbound dependencies of an App Service</span>
+<span class="sd">        Environment.</span>
+
+<span class="sd">        Get the network endpoints of all inbound dependencies of an App Service</span>
+<span class="sd">        Environment.</span>
+
+<span class="sd">        :param resource_group_name: Name of the resource group to which the</span>
+<span class="sd">         resource belongs.</span>
+<span class="sd">        :type resource_group_name: str</span>
+<span class="sd">        :param name: Name of the App Service Environment.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
+<span class="sd">        :param bool raw: returns the direct response alongside the</span>
+<span class="sd">         deserialized response</span>
+<span class="sd">        :param operation_config: :ref:`Operation configuration</span>
+<span class="sd">         overrides&lt;msrest:optionsforoperations&gt;`.</span>
+<span class="sd">        :return: An iterator like instance of InboundEnvironmentEndpoint</span>
+<span class="sd">        :rtype:</span>
+<span class="sd">         ~azure.mgmt.web.models.InboundEnvironmentEndpointPaged[~azure.mgmt.web.models.InboundEnvironmentEndpoint]</span>
+<span class="sd">        :raises:</span>
+<span class="sd">         :class:`DefaultErrorResponseException&lt;azure.mgmt.web.models.DefaultErrorResponseException&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">internal_paging</span><span class="p">(</span><span class="n">next_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">next_link</span><span class="p">:</span>
+                <span class="c1"># Construct URL</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_inbound_network_dependencies_endpoints</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+                <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[-\w\._\(\)]+[^\.]$&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
+
+                <span class="c1"># Construct parameters</span>
+                <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">query_parameters</span><span class="p">[</span><span class="s1">&#39;api-version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;self.api_version&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">next_link</span>
+                <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="c1"># Construct headers</span>
+            <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_headers</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Construct and send request</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DefaultErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span>
+
+        <span class="c1"># Deserialize response</span>
+        <span class="n">deserialized</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">InboundEnvironmentEndpointPaged</span><span class="p">(</span><span class="n">internal_paging</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="o">.</span><span class="n">dependencies</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="n">header_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">client_raw_response</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">InboundEnvironmentEndpointPaged</span><span class="p">(</span><span class="n">internal_paging</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="o">.</span><span class="n">dependencies</span><span class="p">,</span> <span class="n">header_dict</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">client_raw_response</span>
+
+        <span class="k">return</span> <span class="n">deserialized</span></div>
+    <span class="n">get_inbound_network_dependencies_endpoints</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/resourceGroups/</span><span class="si">{resourceGroupName}</span><span class="s1">/providers/Microsoft.Web/hostingEnvironments/</span><span class="si">{name}</span><span class="s1">/inboundNetworkDependenciesEndpoints&#39;</span><span class="p">}</span>
+
 <div class="viewcode-block" id="AppServiceEnvironmentsOperations.list_metric_definitions"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.operations.html#azure.mgmt.web.operations.AppServiceEnvironmentsOperations.list_metric_definitions">[docs]</a>    <span class="k">def</span> <span class="nf">list_metric_definitions</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get global metric definitions of an App Service Environment.</span>
@@ -2195,6 +2269,80 @@
 
         <span class="k">return</span> <span class="n">deserialized</span></div>
     <span class="n">list_operations</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/resourceGroups/</span><span class="si">{resourceGroupName}</span><span class="s1">/providers/Microsoft.Web/hostingEnvironments/</span><span class="si">{name}</span><span class="s1">/operations&#39;</span><span class="p">}</span>
+
+<div class="viewcode-block" id="AppServiceEnvironmentsOperations.get_outbound_network_dependencies_endpoints"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.operations.html#azure.mgmt.web.operations.AppServiceEnvironmentsOperations.get_outbound_network_dependencies_endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">get_outbound_network_dependencies_endpoints</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the network endpoints of all outbound dependencies of an App</span>
+<span class="sd">        Service Environment.</span>
+
+<span class="sd">        Get the network endpoints of all outbound dependencies of an App</span>
+<span class="sd">        Service Environment.</span>
+
+<span class="sd">        :param resource_group_name: Name of the resource group to which the</span>
+<span class="sd">         resource belongs.</span>
+<span class="sd">        :type resource_group_name: str</span>
+<span class="sd">        :param name: Name of the App Service Environment.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param dict custom_headers: headers that will be added to the request</span>
+<span class="sd">        :param bool raw: returns the direct response alongside the</span>
+<span class="sd">         deserialized response</span>
+<span class="sd">        :param operation_config: :ref:`Operation configuration</span>
+<span class="sd">         overrides&lt;msrest:optionsforoperations&gt;`.</span>
+<span class="sd">        :return: An iterator like instance of OutboundEnvironmentEndpoint</span>
+<span class="sd">        :rtype:</span>
+<span class="sd">         ~azure.mgmt.web.models.OutboundEnvironmentEndpointPaged[~azure.mgmt.web.models.OutboundEnvironmentEndpoint]</span>
+<span class="sd">        :raises:</span>
+<span class="sd">         :class:`DefaultErrorResponseException&lt;azure.mgmt.web.models.DefaultErrorResponseException&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">internal_paging</span><span class="p">(</span><span class="n">next_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">next_link</span><span class="p">:</span>
+                <span class="c1"># Construct URL</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_outbound_network_dependencies_endpoints</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+                <span class="n">path_format_arguments</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;resourceGroupName&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;resource_group_name&quot;</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^[-\w\._\(\)]+[^\.]$&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;subscriptionId&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="s2">&quot;self.config.subscription_id&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">format_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">path_format_arguments</span><span class="p">)</span>
+
+                <span class="c1"># Construct parameters</span>
+                <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">query_parameters</span><span class="p">[</span><span class="s1">&#39;api-version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;self.api_version&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">next_link</span>
+                <span class="n">query_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="c1"># Construct headers</span>
+            <span class="n">header_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">generate_client_request_id</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;x-ms-client-request-id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">custom_headers</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_headers</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">header_parameters</span><span class="p">[</span><span class="s1">&#39;accept-language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serialize</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;self.config.accept_language&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">accept_language</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Construct and send request</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">query_parameters</span><span class="p">,</span> <span class="n">header_parameters</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="n">models</span><span class="o">.</span><span class="n">DefaultErrorResponseException</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span>
+
+        <span class="c1"># Deserialize response</span>
+        <span class="n">deserialized</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OutboundEnvironmentEndpointPaged</span><span class="p">(</span><span class="n">internal_paging</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="o">.</span><span class="n">dependencies</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="n">header_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">client_raw_response</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OutboundEnvironmentEndpointPaged</span><span class="p">(</span><span class="n">internal_paging</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialize</span><span class="o">.</span><span class="n">dependencies</span><span class="p">,</span> <span class="n">header_dict</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">client_raw_response</span>
+
+        <span class="k">return</span> <span class="n">deserialized</span></div>
+    <span class="n">get_outbound_network_dependencies_endpoints</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;/subscriptions/</span><span class="si">{subscriptionId}</span><span class="s1">/resourceGroups/</span><span class="si">{resourceGroupName}</span><span class="s1">/providers/Microsoft.Web/hostingEnvironments/</span><span class="si">{name}</span><span class="s1">/outboundNetworkDependenciesEndpoints&#39;</span><span class="p">}</span>
 
 <div class="viewcode-block" id="AppServiceEnvironmentsOperations.reboot"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.operations.html#azure.mgmt.web.operations.AppServiceEnvironmentsOperations.reboot">[docs]</a>    <span class="k">def</span> <span class="nf">reboot</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">resource_group_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">custom_headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">operation_config</span><span class="p">):</span>

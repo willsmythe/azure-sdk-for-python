@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>azure.mgmt.web.models.managed_service_identity_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
+  <title>azure.mgmt.web.models.endpoint_detail_py3 &mdash; Azure SDK for Python 2.0.0 documentation</title>
   
 
   
@@ -285,7 +285,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>azure.mgmt.web.models.managed_service_identity_py3</li>
+      <li>azure.mgmt.web.models.endpoint_detail_py3</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -300,7 +300,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for azure.mgmt.web.models.managed_service_identity_py3</h1><div class="highlight"><pre>
+  <h1>Source code for azure.mgmt.web.models.endpoint_detail_py3</h1><div class="highlight"><pre>
 <span></span><span class="c1"># coding=utf-8</span>
 <span class="c1"># --------------------------------------------------------------------------</span>
 <span class="c1"># Copyright (c) Microsoft Corporation. All rights reserved.</span>
@@ -315,45 +315,36 @@
 <span class="kn">from</span> <span class="nn">msrest.serialization</span> <span class="k">import</span> <span class="n">Model</span>
 
 
-<div class="viewcode-block" id="ManagedServiceIdentity"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.models.html#azure.mgmt.web.models.ManagedServiceIdentity">[docs]</a><span class="k">class</span> <span class="nc">ManagedServiceIdentity</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Managed service identity.</span>
+<div class="viewcode-block" id="EndpointDetail"><a class="viewcode-back" href="../../../../../ref/azure.mgmt.web.models.html#azure.mgmt.web.models.EndpointDetail">[docs]</a><span class="k">class</span> <span class="nc">EndpointDetail</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Current TCP connectivity information from the App Service Environment to a</span>
+<span class="sd">    single endpoint.</span>
 
-<span class="sd">    Variables are only populated by the server, and will be ignored when</span>
-<span class="sd">    sending a request.</span>
-
-<span class="sd">    :param type: Type of managed service identity. Possible values include:</span>
-<span class="sd">     &#39;SystemAssigned&#39;, &#39;UserAssigned&#39;, &#39;SystemAssigned, UserAssigned&#39;, &#39;None&#39;</span>
-<span class="sd">    :type type: str or ~azure.mgmt.web.models.ManagedServiceIdentityType</span>
-<span class="sd">    :ivar tenant_id: Tenant of managed service identity.</span>
-<span class="sd">    :vartype tenant_id: str</span>
-<span class="sd">    :ivar principal_id: Principal Id of managed service identity.</span>
-<span class="sd">    :vartype principal_id: str</span>
-<span class="sd">    :param user_assigned_identities: The list of user assigned identities</span>
-<span class="sd">     associated with the resource. The user identity dictionary key references</span>
-<span class="sd">     will be ARM resource ids in the form:</span>
-<span class="sd">     &#39;/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}</span>
-<span class="sd">    :type user_assigned_identities: dict[str,</span>
-<span class="sd">     ~azure.mgmt.web.models.ManagedServiceIdentityUserAssignedIdentitiesValue]</span>
+<span class="sd">    :param ip_address: An IP Address that Domain Name currently resolves to.</span>
+<span class="sd">    :type ip_address: str</span>
+<span class="sd">    :param port: The port an endpoint is connected to.</span>
+<span class="sd">    :type port: int</span>
+<span class="sd">    :param latency: The time in milliseconds it takes for a TCP connection to</span>
+<span class="sd">     be created from the App Service Environment to this IpAddress at this</span>
+<span class="sd">     Port.</span>
+<span class="sd">    :type latency: float</span>
+<span class="sd">    :param is_accessable: Whether it is possible to create a TCP connection</span>
+<span class="sd">     from the App Service Environment to this IpAddress at this Port.</span>
+<span class="sd">    :type is_accessable: bool</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">_validation</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;tenant_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="s1">&#39;principal_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;readonly&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-    <span class="p">}</span>
-
     <span class="n">_attribute_map</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;tenant_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;tenantId&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;principal_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;principalId&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;user_assigned_identities&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;userAssignedIdentities&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{ManagedServiceIdentityUserAssignedIdentitiesValue}</span><span class="s1">&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;ip_address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;ipAddress&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;port&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;latency&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;latency&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;is_accessable&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;isAccessable&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;bool&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_assigned_identities</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">ManagedServiceIdentity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">principal_id</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">user_assigned_identities</span> <span class="o">=</span> <span class="n">user_assigned_identities</span></div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">ip_address</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latency</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_accessable</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">EndpointDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip_address</span> <span class="o">=</span> <span class="n">ip_address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">latency</span> <span class="o">=</span> <span class="n">latency</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_accessable</span> <span class="o">=</span> <span class="n">is_accessable</span></div>
 </pre></div>
 
            </div>

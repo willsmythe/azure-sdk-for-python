@@ -726,7 +726,7 @@ Virtual Network. Possible values include: ‘DEFAULT’, ‘INHERITED’, ‘STA
 
 <dl class="class">
 <dt id="azure.mgmt.web.models.VnetInfo">
-<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">VnetInfo</code><span class="sig-paren">(</span><em>*</em>, <em>kind: str = None</em>, <em>vnet_resource_id: str = None</em>, <em>cert_blob: bytearray = None</em>, <em>dns_servers: str = None</em>, <em>is_swift: bool = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/vnet_info_py3.html#VnetInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.VnetInfo" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">VnetInfo</code><span class="sig-paren">(</span><em>*</em>, <em>kind: str = None</em>, <em>vnet_resource_id: str = None</em>, <em>cert_blob: str = None</em>, <em>dns_servers: str = None</em>, <em>is_swift: bool = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/vnet_info_py3.html#VnetInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.VnetInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.web.models.proxy_only_resource_py3.ProxyOnlyResource</span></code></p>
 <p>Virtual Network information contract.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -747,7 +747,7 @@ otherwise, &lt;code&gt;false&lt;/code&gt;.</p></li>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>kind</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Kind of resource.</p></li>
 <li><p><strong>vnet_resource_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The Virtual Network’s resource ID.</p></li>
-<li><p><strong>cert_blob</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bytearray" title="(in Python v3.5)"><em>bytearray</em></a>) – A certificate file (.cer) blob containing the public key
+<li><p><strong>cert_blob</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – A certificate file (.cer) blob containing the public key
 of the private key used to authenticate a
 Point-To-Site VPN connection.</p></li>
 <li><p><strong>dns_servers</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – DNS servers to be used by this Virtual Network. This
@@ -1054,8 +1054,25 @@ sending a request.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="azure.mgmt.web.models.ManagedServiceIdentityUserAssignedIdentitiesValue">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">ManagedServiceIdentityUserAssignedIdentitiesValue</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/managed_service_identity_user_assigned_identities_value_py3.html#ManagedServiceIdentityUserAssignedIdentitiesValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentityUserAssignedIdentitiesValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ManagedServiceIdentityUserAssignedIdentitiesValue.</p>
+<p>Variables are only populated by the server, and will be ignored when
+sending a request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>principal_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Principal Id of user assigned identity</p></li>
+<li><p><strong>client_id</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Client Id of user assigned identity</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
 <dt id="azure.mgmt.web.models.ManagedServiceIdentity">
-<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">ManagedServiceIdentity</code><span class="sig-paren">(</span><em>*</em>, <em>type=None</em>, <em>identity_ids=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/managed_service_identity_py3.html#ManagedServiceIdentity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">ManagedServiceIdentity</code><span class="sig-paren">(</span><em>*</em>, <em>type=None</em>, <em>user_assigned_identities=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/managed_service_identity_py3.html#ManagedServiceIdentity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>Managed service identity.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -1064,8 +1081,12 @@ sending a request.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference internal" href="#azure.mgmt.web.models.ManagedServiceIdentityType" title="azure.mgmt.web.models.ManagedServiceIdentityType"><em>ManagedServiceIdentityType</em></a>) – Type of managed service identity. Possible values include:
-‘SystemAssigned’, ‘UserAssigned’</p></li>
-<li><p><strong>identity_ids</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Array of UserAssigned managed service identities.</p></li>
+‘SystemAssigned’, ‘UserAssigned’, ‘SystemAssigned, UserAssigned’, ‘None’</p></li>
+<li><p><strong>user_assigned_identities</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>,
+</em><a class="reference internal" href="#azure.mgmt.web.models.ManagedServiceIdentityUserAssignedIdentitiesValue" title="azure.mgmt.web.models.ManagedServiceIdentityUserAssignedIdentitiesValue"><em>ManagedServiceIdentityUserAssignedIdentitiesValue</em></a><em>]</em>) – The list of user assigned identities
+associated with the resource. The user identity dictionary key references
+will be ARM resource ids in the form:
+‘/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
@@ -1113,7 +1134,7 @@ operation.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.web.models.CloningInfo">
-<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">CloningInfo</code><span class="sig-paren">(</span><em>*</em>, <em>source_web_app_id: str</em>, <em>correlation_id: str = None</em>, <em>overwrite: bool = None</em>, <em>clone_custom_host_names: bool = None</em>, <em>clone_source_control: bool = None</em>, <em>hosting_environment: str = None</em>, <em>app_settings_overrides=None</em>, <em>configure_load_balancing: bool = None</em>, <em>traffic_manager_profile_id: str = None</em>, <em>traffic_manager_profile_name: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/cloning_info_py3.html#CloningInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.CloningInfo" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">CloningInfo</code><span class="sig-paren">(</span><em>*</em>, <em>source_web_app_id: str</em>, <em>correlation_id: str = None</em>, <em>overwrite: bool = None</em>, <em>clone_custom_host_names: bool = None</em>, <em>clone_source_control: bool = None</em>, <em>source_web_app_location: str = None</em>, <em>hosting_environment: str = None</em>, <em>app_settings_overrides=None</em>, <em>configure_load_balancing: bool = None</em>, <em>traffic_manager_profile_id: str = None</em>, <em>traffic_manager_profile_name: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/cloning_info_py3.html#CloningInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.CloningInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>Information needed for cloning operation.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -1135,6 +1156,8 @@ resource ID is of the form
 for production slots and
 /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
 for other slots.</p></li>
+<li><p><strong>source_web_app_location</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Location of source app ex: West US or
+North Europe</p></li>
 <li><p><strong>hosting_environment</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – App Service Environment.</p></li>
 <li><p><strong>app_settings_overrides</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – Application setting overrides for cloned
 app. If specified, these settings override the settings cloned
@@ -5561,7 +5584,7 @@ sending a request.</p>
 
 <dl class="class">
 <dt id="azure.mgmt.web.models.SitePatchResource">
-<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">SitePatchResource</code><span class="sig-paren">(</span><em>*</em>, <em>kind: str = None</em>, <em>enabled: bool = None</em>, <em>host_name_ssl_states=None</em>, <em>server_farm_id: str = None</em>, <em>reserved: bool = False</em>, <em>is_xenon: bool = False</em>, <em>hyper_v: bool = False</em>, <em>site_config=None</em>, <em>scm_site_also_stopped: bool = False</em>, <em>hosting_environment_profile=None</em>, <em>client_affinity_enabled: bool = None</em>, <em>client_cert_enabled: bool = None</em>, <em>client_cert_exclusion_paths: str = None</em>, <em>host_names_disabled: bool = None</em>, <em>container_size: int = None</em>, <em>daily_memory_time_quota: int = None</em>, <em>cloning_info=None</em>, <em>https_only: bool = None</em>, <em>redundancy_mode=None</em>, <em>geo_distributions=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/site_patch_resource_py3.html#SitePatchResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.SitePatchResource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">SitePatchResource</code><span class="sig-paren">(</span><em>*</em>, <em>kind: str = None</em>, <em>enabled: bool = None</em>, <em>host_name_ssl_states=None</em>, <em>server_farm_id: str = None</em>, <em>reserved: bool = False</em>, <em>is_xenon: bool = False</em>, <em>hyper_v: bool = False</em>, <em>site_config=None</em>, <em>scm_site_also_stopped: bool = False</em>, <em>hosting_environment_profile=None</em>, <em>client_affinity_enabled: bool = None</em>, <em>client_cert_enabled: bool = None</em>, <em>client_cert_exclusion_paths: str = None</em>, <em>host_names_disabled: bool = None</em>, <em>container_size: int = None</em>, <em>daily_memory_time_quota: int = None</em>, <em>cloning_info=None</em>, <em>https_only: bool = None</em>, <em>redundancy_mode=None</em>, <em>geo_distributions=None</em>, <em>identity=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/site_patch_resource_py3.html#SitePatchResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.SitePatchResource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">azure.mgmt.web.models.proxy_only_resource_py3.ProxyOnlyResource</span></code></p>
 <p>ARM resource for a site.</p>
 <p>Variables are only populated by the server, and will be ignored when
@@ -5655,6 +5678,7 @@ http requests</p></li>
 <li><p><strong>redundancy_mode</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or </em><a class="reference internal" href="#azure.mgmt.web.models.RedundancyMode" title="azure.mgmt.web.models.RedundancyMode"><em>RedundancyMode</em></a>) – Site redundancy mode. Possible values include:
 ‘None’, ‘Manual’, ‘Failover’, ‘ActiveActive’, ‘GeoRedundant’</p></li>
 <li><p><strong>geo_distributions</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference internal" href="#azure.mgmt.web.models.GeoDistribution" title="azure.mgmt.web.models.GeoDistribution"><em>GeoDistribution</em></a><em>]</em>) – GeoDistributions for this site</p></li>
+<li><p><strong>identity</strong> (<a class="reference internal" href="#azure.mgmt.web.models.ManagedServiceIdentity" title="azure.mgmt.web.models.ManagedServiceIdentity"><em>ManagedServiceIdentity</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -6287,6 +6311,44 @@ Service Environment default SSL certificate</p></li>
 </dd></dl>
 
 <dl class="class">
+<dt id="azure.mgmt.web.models.EndpointDetail">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">EndpointDetail</code><span class="sig-paren">(</span><em>*</em>, <em>ip_address: str = None</em>, <em>port: int = None</em>, <em>latency: float = None</em>, <em>is_accessable: bool = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/endpoint_detail_py3.html#EndpointDetail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.EndpointDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>Current TCP connectivity information from the App Service Environment to a
+single endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ip_address</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – An IP Address that Domain Name currently resolves to.</p></li>
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) – The port an endpoint is connected to.</p></li>
+<li><p><strong>latency</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#float" title="(in Python v3.5)"><em>float</em></a>) – The time in milliseconds it takes for a TCP connection to
+be created from the App Service Environment to this IpAddress at this
+Port.</p></li>
+<li><p><strong>is_accessable</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) – Whether it is possible to create a TCP connection
+from the App Service Environment to this IpAddress at this Port.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.web.models.EndpointDependency">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">EndpointDependency</code><span class="sig-paren">(</span><em>*</em>, <em>domain_name: str = None</em>, <em>endpoint_details=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/endpoint_dependency_py3.html#EndpointDependency"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.EndpointDependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>A domain name that a service is reached at, including details of the
+current connection status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The domain name of the dependency.</p></li>
+<li><p><strong>endpoint_details</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference internal" href="#azure.mgmt.web.models.EndpointDetail" title="azure.mgmt.web.models.EndpointDetail"><em>EndpointDetail</em></a><em>]</em>) – The IP Addresses and Ports used when connecting
+to DomainName.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
 <dt id="azure.mgmt.web.models.HostingEnvironmentDiagnostics">
 <em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">HostingEnvironmentDiagnostics</code><span class="sig-paren">(</span><em>*</em>, <em>name: str = None</em>, <em>diagnosics_output: str = None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/hosting_environment_diagnostics_py3.html#HostingEnvironmentDiagnostics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.HostingEnvironmentDiagnostics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
@@ -6296,6 +6358,26 @@ Service Environment default SSL certificate</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Name/identifier of the diagnostics.</p></li>
 <li><p><strong>diagnosics_output</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Diagnostics output.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.web.models.InboundEnvironmentEndpoint">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">InboundEnvironmentEndpoint</code><span class="sig-paren">(</span><em>*</em>, <em>description: str = None</em>, <em>endpoints=None</em>, <em>ports=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/inbound_environment_endpoint_py3.html#InboundEnvironmentEndpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.InboundEnvironmentEndpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>The IP Addresses and Ports that require inbound network access to and
+within the subnet of the App Service Environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Short text describing the purpose of the network
+traffic.</p></li>
+<li><p><strong>endpoints</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – The IP addresses that network traffic will originate
+from in cidr notation.</p></li>
+<li><p><strong>ports</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em>]</em>) – The ports that network traffic will arrive to the App
+Service Environment at.</p></li>
 </ul>
 </dd>
 </dl>
@@ -6338,6 +6420,25 @@ together with retention period.</p></li>
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><p><strong>kind</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Kind of resource.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.web.models.OutboundEnvironmentEndpoint">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">OutboundEnvironmentEndpoint</code><span class="sig-paren">(</span><em>*</em>, <em>category: str = None</em>, <em>endpoints=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/outbound_environment_endpoint_py3.html#OutboundEnvironmentEndpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.OutboundEnvironmentEndpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>Endpoints accessed for a common purpose that the App Service Environment
+requires outbound network access to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>category</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – The type of service accessed by the App Service
+Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active
+Directory.</p></li>
+<li><p><strong>endpoints</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a><em>[</em><a class="reference internal" href="#azure.mgmt.web.models.EndpointDependency" title="azure.mgmt.web.models.EndpointDependency"><em>EndpointDependency</em></a><em>]</em>) – The endpoints that the App Service Environment reaches
+the service at.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -6851,6 +6952,13 @@ File</p></li>
 </dd></dl>
 
 <dl class="class">
+<dt id="azure.mgmt.web.models.InboundEnvironmentEndpointPaged">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">InboundEnvironmentEndpointPaged</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/inbound_environment_endpoint_paged.html#InboundEnvironmentEndpointPaged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.InboundEnvironmentEndpointPaged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.paging.Paged</span></code></p>
+<p>A paging container for iterating over a list of <a class="reference internal" href="#azure.mgmt.web.models.InboundEnvironmentEndpoint" title="azure.mgmt.web.models.InboundEnvironmentEndpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">InboundEnvironmentEndpoint</span></code></a> object</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="azure.mgmt.web.models.WorkerPoolResourcePaged">
 <em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">WorkerPoolResourcePaged</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/worker_pool_resource_paged.html#WorkerPoolResourcePaged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.WorkerPoolResourcePaged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.paging.Paged</span></code></p>
@@ -6869,6 +6977,13 @@ File</p></li>
 <em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">UsagePaged</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/usage_paged.html#UsagePaged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.UsagePaged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.paging.Paged</span></code></p>
 <p>A paging container for iterating over a list of <a class="reference internal" href="#azure.mgmt.web.models.Usage" title="azure.mgmt.web.models.Usage"><code class="xref py py-class docutils literal notranslate"><span class="pre">Usage</span></code></a> object</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="azure.mgmt.web.models.OutboundEnvironmentEndpointPaged">
+<em class="property">class </em><code class="descclassname">azure.mgmt.web.models.</code><code class="descname">OutboundEnvironmentEndpointPaged</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/web/models/outbound_environment_endpoint_paged.html#OutboundEnvironmentEndpointPaged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.web.models.OutboundEnvironmentEndpointPaged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.paging.Paged</span></code></p>
+<p>A paging container for iterating over a list of <a class="reference internal" href="#azure.mgmt.web.models.OutboundEnvironmentEndpoint" title="azure.mgmt.web.models.OutboundEnvironmentEndpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutboundEnvironmentEndpoint</span></code></a> object</p>
 </dd></dl>
 
 <dl class="class">
@@ -7172,8 +7287,18 @@ File</p></li>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.5/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>An enumeration.</p>
 <dl class="attribute">
+<dt id="azure.mgmt.web.models.ManagedServiceIdentityType.none">
+<code class="descname">none</code><em class="property"> = 'None'</em><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentityType.none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="azure.mgmt.web.models.ManagedServiceIdentityType.system_assigned">
 <code class="descname">system_assigned</code><em class="property"> = 'SystemAssigned'</em><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentityType.system_assigned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="azure.mgmt.web.models.ManagedServiceIdentityType.system_assigned_user_assigned">
+<code class="descname">system_assigned_user_assigned</code><em class="property"> = 'SystemAssigned, UserAssigned'</em><a class="headerlink" href="#azure.mgmt.web.models.ManagedServiceIdentityType.system_assigned_user_assigned" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
