@@ -1488,7 +1488,7 @@ webhooks for notifications.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.containerregistry.v2018_09_01.models.SourceTrigger">
-<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">SourceTrigger</code><span class="sig-paren">(</span><em>*</em>, <em>source_repository</em>, <em>source_trigger_events</em>, <em>name: str</em>, <em>status=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/source_trigger_py3.html#SourceTrigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.SourceTrigger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">SourceTrigger</code><span class="sig-paren">(</span><em>*</em>, <em>source_repository</em>, <em>source_trigger_events</em>, <em>name: str</em>, <em>status='Enabled'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/source_trigger_py3.html#SourceTrigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.SourceTrigger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>The properties of a source based trigger.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -1502,7 +1502,7 @@ source(code) for the task.</p></li>
 the trigger.</p></li>
 <li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus" title="azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus"><em>TriggerStatus</em></a>) – The current status of trigger. Possible values include:
-‘Disabled’, ‘Enabled’</p></li>
+‘Disabled’, ‘Enabled’. Default value: “Enabled” .</p></li>
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The name of the trigger.</p></li>
 </ul>
 </dd>
@@ -1511,7 +1511,7 @@ the trigger.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTrigger">
-<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">BaseImageTrigger</code><span class="sig-paren">(</span><em>*</em>, <em>base_image_trigger_type</em>, <em>name: str</em>, <em>status=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/base_image_trigger_py3.html#BaseImageTrigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTrigger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">BaseImageTrigger</code><span class="sig-paren">(</span><em>*</em>, <em>base_image_trigger_type</em>, <em>name: str</em>, <em>status='Enabled'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/base_image_trigger_py3.html#BaseImageTrigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTrigger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>The trigger based on base image dependency.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -1523,7 +1523,7 @@ the trigger.</p></li>
 base image dependency updates. Possible values include: ‘All’, ‘Runtime’</p></li>
 <li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus" title="azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus"><em>TriggerStatus</em></a>) – The current status of trigger. Possible values include:
-‘Disabled’, ‘Enabled’</p></li>
+‘Disabled’, ‘Enabled’. Default value: “Enabled” .</p></li>
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The name of the trigger.</p></li>
 </ul>
 </dd>
@@ -1756,7 +1756,7 @@ webhooks for notifications.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.containerregistry.v2018_09_01.models.SourceTriggerUpdateParameters">
-<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">SourceTriggerUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>source_repository=None</em>, <em>source_trigger_events=None</em>, <em>status=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/source_trigger_update_parameters_py3.html#SourceTriggerUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.SourceTriggerUpdateParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">SourceTriggerUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>source_repository=None</em>, <em>source_trigger_events=None</em>, <em>status='Enabled'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/source_trigger_update_parameters_py3.html#SourceTriggerUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.SourceTriggerUpdateParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>The properties for updating a source based trigger.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -1770,7 +1770,7 @@ for the task.</p></li>
 trigger.</p></li>
 <li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus" title="azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus"><em>TriggerStatus</em></a>) – The current status of trigger. Possible values include:
-‘Disabled’, ‘Enabled’</p></li>
+‘Disabled’, ‘Enabled’. Default value: “Enabled” .</p></li>
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The name of the trigger.</p></li>
 </ul>
 </dd>
@@ -1779,7 +1779,7 @@ trigger.</p></li>
 
 <dl class="class">
 <dt id="azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTriggerUpdateParameters">
-<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">BaseImageTriggerUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>base_image_trigger_type=None</em>, <em>status=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/base_image_trigger_update_parameters_py3.html#BaseImageTriggerUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTriggerUpdateParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">azure.mgmt.containerregistry.v2018_09_01.models.</code><code class="descname">BaseImageTriggerUpdateParameters</code><span class="sig-paren">(</span><em>*</em>, <em>name: str</em>, <em>base_image_trigger_type=None</em>, <em>status='Enabled'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/azure/mgmt/containerregistry/v2018_09_01/models/base_image_trigger_update_parameters_py3.html#BaseImageTriggerUpdateParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#azure.mgmt.containerregistry.v2018_09_01.models.BaseImageTriggerUpdateParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
 <p>The properties for updating base image dependency trigger.</p>
 <p>All required parameters must be populated in order to send to Azure.</p>
@@ -1791,7 +1791,7 @@ trigger.</p></li>
 image dependency updates. Possible values include: ‘All’, ‘Runtime’</p></li>
 <li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a><em> or
 </em><a class="reference internal" href="#azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus" title="azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus"><em>TriggerStatus</em></a>) – The current status of trigger. Possible values include:
-‘Disabled’, ‘Enabled’</p></li>
+‘Disabled’, ‘Enabled’. Default value: “Enabled” .</p></li>
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) – Required. The name of the trigger.</p></li>
 </ul>
 </dd>

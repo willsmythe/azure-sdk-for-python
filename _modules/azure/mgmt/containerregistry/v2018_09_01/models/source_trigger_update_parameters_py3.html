@@ -329,7 +329,7 @@
 <span class="sd">    :type source_trigger_events: list[str or</span>
 <span class="sd">     ~azure.mgmt.containerregistry.v2018_09_01.models.SourceTriggerEvent]</span>
 <span class="sd">    :param status: The current status of trigger. Possible values include:</span>
-<span class="sd">     &#39;Disabled&#39;, &#39;Enabled&#39;</span>
+<span class="sd">     &#39;Disabled&#39;, &#39;Enabled&#39;. Default value: &quot;Enabled&quot; .</span>
 <span class="sd">    :type status: str or</span>
 <span class="sd">     ~azure.mgmt.containerregistry.v2018_09_01.models.TriggerStatus</span>
 <span class="sd">    :param name: Required. The name of the trigger.</span>
@@ -347,7 +347,7 @@
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">source_repository</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source_trigger_events</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">source_repository</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source_trigger_events</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;Enabled&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">SourceTriggerUpdateParameters</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">source_repository</span> <span class="o">=</span> <span class="n">source_repository</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">source_trigger_events</span> <span class="o">=</span> <span class="n">source_trigger_events</span>
