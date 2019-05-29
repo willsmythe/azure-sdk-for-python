@@ -50,7 +50,7 @@ steps:
     inputs:
       artifactName: $(cacheName)
       targetPath: $(PIP_DOWNLOAD_CACHE)
-    condition: eq(variables['saveCache'], 'true')
+    condition: ne(variables['restoreCache'], 'true')
     displayName: 'Save cache'
     continueOnError: true
 
