@@ -86,8 +86,6 @@ jobs:
 
   - job: 'Test'
 
-    dependsOn: $(dependsOn)
-
     strategy:
       matrix:
         Linux_Python27:
@@ -111,25 +109,15 @@ jobs:
           OSVmImage: 'ubuntu-16.04'
           PythonVersion: '3.7'
           cacheName: 'Linux_Python37'
-        Linux_Python37_cached:
-          OSName: 'Linux'
-          OSVmImage: 'ubuntu-16.04'
-          PythonVersion: '3.7'
-          useCache: true
-          cacheName: 'Linux_Python37'
-          dependsOn: 'Linux_Python37'       
+          restoreCache: false
+          saveCache: true
         Windows_Python35:
           OSName: 'Windows'
           OSVmImage: 'vs2017-win2016'
           PythonVersion: '3.5'
           cacheName: 'Windows_Python35'
-        Windows_Python35_cached:
-          OSName: 'Windows'
-          OSVmImage: 'vs2017-win2016'
-          PythonVersion: '3.5'
-          useCache: true
-          cacheName: 'Windows_Python35'
-          dependsOn: 'Windows_Python35'
+          restoreCache: false
+          saveCache: true
         #MacOS_Python27:
          # OSName: 'MacOS'
         #  OSVmImage: 'macOS-10.13'

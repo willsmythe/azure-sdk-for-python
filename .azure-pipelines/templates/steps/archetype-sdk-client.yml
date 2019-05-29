@@ -26,8 +26,9 @@ steps:
     inputs:
       targetPath: $(PIP_DOWNLOAD_CACHE)
       artifactName: $(cacheName)
-    condition: variables['useCache']
+    condition: variables['restoreCache']
     displayName: 'Restore cache'
+    continueOnError: true
 
   - task: PythonScript@0
     displayName: 'Run VerifyAgentOS script'
@@ -39,21 +40,22 @@ steps:
       pip install pathlib twine codecov beautifulsoup4
     displayName: 'Prep Environment'
 
- # - task: PythonScript@0
-#    displayName: 'Setup and Run Tests'
-#    inputs:
-#      scriptPath: 'scripts/devops_tasks/setup_execute_tests.py'
- #     arguments: '"$(BuildTargetingString)" --junitxml="junit/test-results.xml" ${{ parameters.coverageParam }}'
+  - task: PythonScript@0
+    displayName: 'Setup and Run Tests'
+    inputs:
+      scriptPath: 'scripts/devops_tasks/setup_execute_tests.py'
+      arguments: '"$(BuildTargetingString)" --junitxml="junit/test-results.xml" ${{ parameters.coverageParam }}'
 
   - task: PublishPipelineArtifact@0
     inputs:
       artifactName: $(cacheName)
       targetPath: $(PIP_DOWNLOAD_CACHE)
-    condition: not(variables['useCache'])
+    condition: variables['saveCache']
     displayName: 'Save cache'
+    continueOnError: true
 
-  - task: PublishTestResults@2
-    condition: succeededOrFailed()
-    inputs:
-      testResultsFiles: 'junit/test-results.xml'
-      testRunTitle: '$(OSName) Python $(PythonVersion)'
+ # - task: PublishTestResults@2
+ #   condition: succeededOrFailed()
+ #   inputs:
+ #     testResultsFiles: 'junit/test-results.xml'
+ #     testRunTitle: '$(OSName) Python $(PythonVersion)'
