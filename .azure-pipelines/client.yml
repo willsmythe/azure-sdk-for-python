@@ -92,6 +92,9 @@ jobs:
           OSName: 'Linux'
           OSVmImage: 'ubuntu-16.04'
           PythonVersion: '2.7'
+          cacheName: 'Linux_Python27'
+          restoreCache: false
+          saveCache: true
         #Linux_Python34:
         #  OSName: 'Linux'
         #  OSVmImage: 'ubuntu-16.04'
