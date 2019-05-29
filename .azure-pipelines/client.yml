@@ -86,8 +86,7 @@ jobs:
 
   - job: 'Test'
 
-    dependsOn:
-      - 'Build'
+    dependsOn: $(dependsOn)
 
     strategy:
       matrix:
@@ -95,30 +94,46 @@ jobs:
           OSName: 'Linux'
           OSVmImage: 'ubuntu-16.04'
           PythonVersion: '2.7'
-        Linux_Python34:
-          OSName: 'Linux'
-          OSVmImage: 'ubuntu-16.04'
-          PythonVersion: '3.4'
-        Linux_Python35:
-          OSName: 'Linux'
-          OSVmImage: 'ubuntu-16.04'
-          PythonVersion: '3.5'
-        Linux_Python36:
-          OSName: 'Linux'
-          OSVmImage: 'ubuntu-16.04'
-          PythonVersion: '3.6'
+        #Linux_Python34:
+        #  OSName: 'Linux'
+        #  OSVmImage: 'ubuntu-16.04'
+        #  PythonVersion: '3.4'
+        #Linux_Python35:
+        #  OSName: 'Linux'
+        #  OSVmImage: 'ubuntu-16.04'
+        #  PythonVersion: '3.5'
+        #Linux_Python36:
+        #  OSName: 'Linux'
+        #  OSVmImage: 'ubuntu-16.04'
+        #  PythonVersion: '3.6'
         Linux_Python37:
           OSName: 'Linux'
           OSVmImage: 'ubuntu-16.04'
           PythonVersion: '3.7'
+          cacheName: 'Linux_Python37'
+        Linux_Python37_cached:
+          OSName: 'Linux'
+          OSVmImage: 'ubuntu-16.04'
+          PythonVersion: '3.7'
+          useCache: true
+          cacheName: 'Linux_Python37'
+          dependsOn: 'Linux_Python37'       
         Windows_Python35:
           OSName: 'Windows'
           OSVmImage: 'vs2017-win2016'
           PythonVersion: '3.5'
-        MacOS_Python27:
-          OSName: 'MacOS'
-          OSVmImage: 'macOS-10.13'
-          PythonVersion: '2.7'
+          cacheName: 'Windows_Python35'
+        Windows_Python35_cached:
+          OSName: 'Windows'
+          OSVmImage: 'vs2017-win2016'
+          PythonVersion: '3.5'
+          useCache: true
+          cacheName: 'Windows_Python35'
+          dependsOn: 'Windows_Python35'
+        #MacOS_Python27:
+         # OSName: 'MacOS'
+        #  OSVmImage: 'macOS-10.13'
+        #  PythonVersion: '2.7'
 
     pool:
       vmImage: '$(OSVmImage)'
