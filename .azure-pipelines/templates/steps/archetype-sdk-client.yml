@@ -17,15 +17,19 @@ steps:
     displayName: Show environment variables
 
   - bash: |
-      export PIP_DOWNLOAD_CACHE="$(Pipeline.Workspace)/pip-cache"
-      echo "##vso[task.setvariable variable=PIP_DOWNLOAD_CACHE]$PIP_DOWNLOAD_CACHE"
-      mkdir -p $PIP_DOWNLOAD_CACHE
+      export PIP_CACHE_DIR="~/.cache/pip"
+      echo "##vso[task.setvariable variable=PIP_CACHE_DIR]$PIP_CACHE_DIR"
+      mkdir -p $PIP_CACHE_DIR
     displayName: Set pip cache folder
+    continueOnError: true
 
   - task: DownloadPipelineArtifact@1
     inputs:
-      targetPath: $(PIP_DOWNLOAD_CACHE)
+      targetPath: $(PIP_CACHE_DIR)
       artifactName: $(cacheName)
+      buildType: specific
+      buildVersionToDownload: specific
+      pipelineId: 53
     condition: eq(variables['restoreCache'], 'true')
     displayName: 'Restore cache'
     continueOnError: true
@@ -49,7 +53,7 @@ steps:
   - task: PublishPipelineArtifact@0
     inputs:
       artifactName: $(cacheName)
-      targetPath: $(PIP_DOWNLOAD_CACHE)
+      targetPath: $(PIP_CACHE_DIR)
     condition: ne(variables['restoreCache'], 'true')
     displayName: 'Save cache'
     continueOnError: true
